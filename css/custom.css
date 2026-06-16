@@ -1,0 +1,298 @@
+/* ==========================================================================
+   Animal Health Center & Pet Resort — Sample 3  ·  BRIGHT & PLAYFUL PREMIUM
+   Light, airy, warm. Cutouts are the stars. Soft shadows, rounded everything,
+   teal (pet) + amber (ranch) accents on cream/white. Plain CSS (Tailwind CDN
+   can't process @apply/@layer in a .css file).
+   ========================================================================== */
+
+:root {
+  --cream:   #FBF6EC;   /* warm paper base */
+  --cream-2: #F3EADB;
+  --sand:    #EFE3CE;
+  --white:   #FFFFFF;
+  --ink:     #20180F;   /* warm near-black */
+  --ink-soft:#6b5d4d;
+
+  --teal:    #1B6B6B;   /* pet world */
+  --teal-2:  #2c9494;
+  --teal-ink:#0f3d3d;
+  --amber:   #C17F24;   /* ranch / highlight */
+  --amber-2: #E6A93F;
+  --peach:   #F6D9A8;
+  --forest:  #3E6B23;   /* small accent only */
+  --rust:    #9c4a1a;
+
+  --ring: 0 0 0 4px rgba(193,127,36,.30);
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --ease-out: cubic-bezier(.16,1,.3,1);
+
+  --shadow-sm: 0 4px 14px -6px rgba(60,40,16,.18);
+  --shadow:    0 22px 50px -24px rgba(60,40,16,.32);
+  --shadow-lg: 0 40px 80px -32px rgba(60,40,16,.40);
+  --cut-shadow: drop-shadow(0 28px 26px rgba(60,40,16,.30));
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+h1,h2,h3,h4,h5,.font-heading {
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  letter-spacing: -.02em;
+}
+.display { font-weight: 900; line-height: .95; letter-spacing: -.04em; }
+
+::selection { background: var(--amber-2); color: #2a1c08; }
+:focus-visible { outline: none; box-shadow: var(--ring); border-radius: 10px; }
+
+/* reveal safety net — JS forces these visible if GSAP is blocked/reduced */
+[data-anim] { will-change: transform, opacity; }
+
+/* ==========================================================================
+   ORGANIC blob shapes & soft warm scenery (behind content)
+   ========================================================================== */
+.blob { position:absolute; border-radius:42% 58% 63% 37% / 41% 44% 56% 59%; pointer-events:none; z-index:0; }
+.blob--peach { background: radial-gradient(circle at 35% 30%, var(--peach), #f2c987); opacity:.6; }
+.blob--teal  { background: radial-gradient(circle at 35% 30%, #bfe6e6, #8fd0d0); opacity:.55; }
+.blob--amber { background: radial-gradient(circle at 35% 30%, #f6dca6, #e8b864); opacity:.5; }
+.soft-glow   { position:absolute; border-radius:50%; filter:blur(70px); opacity:.5; pointer-events:none; z-index:0; }
+
+/* dotted texture accent */
+.dotgrid {
+  background-image: radial-gradient(rgba(60,40,16,.10) 1.4px, transparent 1.4px);
+  background-size: 22px 22px;
+}
+
+/* sunrise hero wash */
+.sunrise {
+  background:
+    radial-gradient(120% 90% at 15% 0%, #FFFDF8 0%, transparent 55%),
+    radial-gradient(90% 80% at 100% 10%, #FCEFD3 0%, transparent 60%),
+    linear-gradient(180deg, #FFFDF7 0%, var(--cream) 60%, var(--cream-2) 100%);
+}
+
+/* ==========================================================================
+   CUTOUTS — the stars. Clean-edge ones float anywhere; haloed ones live in frames.
+   ========================================================================== */
+.cutout { display:block; filter: var(--cut-shadow); user-select:none; -webkit-user-drag:none; position:relative; z-index:2; }
+.cutout--abs { position:absolute; pointer-events:none; }
+
+/* soft contact shadow ellipse under a grounded cutout */
+.ground-shadow {
+  position:absolute; left:50%; transform:translateX(-50%);
+  width:66%; height:6%; bottom:1%;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(60,40,16,.40), transparent 72%);
+  filter: blur(7px); z-index:1; pointer-events:none;
+}
+
+/* haloed studio cutouts (dog-trot, cat, dog-groomed, terrier) carry a grey box.
+   Frame them in a soft rounded card so the halo reads as a vignette, not a flaw. */
+.in-frame {
+  border-radius: 26px; overflow:hidden;
+  background: radial-gradient(120% 120% at 50% 25%, #fff, var(--cream-2));
+  box-shadow: var(--shadow); position:relative;
+}
+.in-frame img { width:100%; height:100%; object-fit:contain; mix-blend-mode:multiply; }
+
+/* dark variant — for photo cutouts that ship on a BLACK background (the
+   grooming golden-retriever portraits). A light multiply frame would turn
+   black; instead we sink them into a warm-dark frame so the edge disappears,
+   and skip the blend. object-fit:cover fills the frame edge-to-edge. */
+.in-frame--dark {
+  background: radial-gradient(120% 120% at 50% 18%, #2a2018, #0e0a06);
+  box-shadow: var(--shadow-lg);
+}
+.in-frame--dark img { object-fit:cover; mix-blend-mode:normal; }
+
+/* ==========================================================================
+   LIVE OPEN / CLOSED BADGE
+   ========================================================================== */
+.hours-badge { display:inline-flex; align-items:center; gap:.45rem; font-weight:700; font-size:.78rem;
+  padding:.34rem .74rem; border-radius:999px; line-height:1; white-space:nowrap; }
+.hours-badge::before { content:""; width:.5rem; height:.5rem; border-radius:50%; background:currentColor; flex:none; }
+.hours-badge.is-open { color:#1f8a4c; background:rgba(31,138,76,.14); }
+.hours-badge.is-open::before { animation:badgePulse 2s var(--ease-out) infinite; }
+.hours-badge.is-closed { color:#c25b3a; background:rgba(194,91,58,.14); }
+@keyframes badgePulse { 0%{box-shadow:0 0 0 0 rgba(31,138,76,.5);} 70%{box-shadow:0 0 0 7px rgba(31,138,76,0);} 100%{box-shadow:0 0 0 0 rgba(31,138,76,0);} }
+
+/* active nav */
+[data-nav].is-active { color: var(--teal); }
+[data-nav].is-active::after { content:""; display:block; height:3px; border-radius:3px; background:var(--amber-2); margin-top:4px; }
+
+/* ==========================================================================
+   BUTTONS — chunky, rounded, friendly-premium
+   ========================================================================== */
+.btn { display:inline-flex; align-items:center; gap:.55rem; font-family:"Nunito",sans-serif; font-weight:800;
+  font-size:1rem; padding:.95rem 1.6rem; border-radius:16px; line-height:1;
+  transition: transform .3s var(--ease-out), box-shadow .3s var(--ease-out), background .3s, color .3s; }
+.btn:active { transform: translateY(1px) scale(.99); }
+.btn--amber { background:linear-gradient(180deg,var(--amber-2),var(--amber)); color:#2a1c08; box-shadow:0 14px 26px -10px rgba(193,127,36,.6); }
+.btn--amber:hover { transform:translateY(-3px); box-shadow:0 22px 38px -12px rgba(193,127,36,.7); }
+.btn--teal { background:var(--teal); color:var(--cream); box-shadow:0 14px 26px -12px rgba(27,107,107,.6); }
+.btn--teal:hover { transform:translateY(-3px); box-shadow:0 22px 38px -12px rgba(27,107,107,.75); }
+.btn--ink { background:var(--ink); color:var(--cream); }
+.btn--ink:hover { transform:translateY(-3px); box-shadow:var(--shadow); }
+.btn--ghost { background:var(--white); color:var(--ink); box-shadow:inset 0 0 0 2px rgba(60,40,16,.14), var(--shadow-sm); }
+.btn--ghost:hover { transform:translateY(-3px); box-shadow:inset 0 0 0 2px rgba(60,40,16,.22), var(--shadow); }
+
+/* ==========================================================================
+   CARDS
+   ========================================================================== */
+.card { background:var(--white); border-radius:24px; box-shadow:var(--shadow-sm); }
+.card-lift { transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out); }
+.card-lift:hover { transform: translateY(-7px); box-shadow: var(--shadow-lg); }
+
+/* paw divider */
+.paw-divider { display:flex; align-items:center; justify-content:center; gap:.9rem; padding:1rem 0; color:var(--amber); opacity:.55; }
+.paw-divider::before,.paw-divider::after { content:""; height:2px; flex:1 1 auto; max-width:150px; background:linear-gradient(90deg,transparent,currentColor); border-radius:2px; }
+.paw-divider::after { background:linear-gradient(90deg,currentColor,transparent); }
+.paw-divider svg { width:24px; height:24px; flex:none; }
+
+/* ==========================================================================
+   PET PROFILE BUILDER tiles
+   ========================================================================== */
+.pet-tile { transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out); }
+.pet-tile:hover { transform: translateY(-6px) rotate(-.5deg); box-shadow: var(--shadow-lg); }
+.pet-tile.is-active { box-shadow: 0 0 0 4px var(--amber-2), var(--shadow); transform: translateY(-3px); }
+
+/* ==========================================================================
+   RANCH / COWBOY moment — warm, not dark. Sunset cream→amber with wood hint.
+   ========================================================================== */
+.ranch {
+  position:relative; overflow:hidden; color:#3a2a14;
+  background:
+    radial-gradient(100% 70% at 50% 0%, #FBE6BE 0%, transparent 60%),
+    repeating-linear-gradient(90deg, rgba(156,74,26,.05) 0 2px, transparent 2px 70px),
+    linear-gradient(180deg, #F6DCA6 0%, #EAC07A 55%, #E0AE5E 100%);
+}
+.ranch h2,.ranch h3 { color:#3a2510; }
+.ranch-ground { position:absolute; left:0; right:0; bottom:0; height:30%;
+  background:linear-gradient(180deg, transparent, rgba(156,74,26,.18)); pointer-events:none; }
+.lasso-rope { height:6px; border-radius:6px;
+  background:repeating-linear-gradient(45deg,var(--amber) 0 9px,var(--rust) 9px 18px);
+  box-shadow:0 2px 5px rgba(60,40,16,.25); }
+
+/* ==========================================================================
+   LOYALTY PUNCH CARD — premium membership card (teal, pops on cream)
+   ========================================================================== */
+.punch-card { position:relative; border-radius:24px; overflow:hidden; color:var(--cream);
+  background: radial-gradient(140% 120% at 0% 0%, rgba(255,255,255,.14), transparent 55%),
+    linear-gradient(135deg, var(--teal-2) 0%, var(--teal) 50%, var(--teal-ink) 100%);
+  box-shadow: var(--shadow-lg); }
+.punch-card::after { content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.12) 50%,transparent 58%); }
+.punch-perf { height:0; border-top:2px dashed rgba(251,246,236,.4); margin:0 1.25rem; }
+.punch-card[data-active="true"] .punch-locked { display:none; }
+.punch-card:not([data-active="true"]) .punch-stamps,
+.punch-card:not([data-active="true"]) [data-reward] { opacity:.4; filter:blur(1px); }
+.stamp { position:relative; aspect-ratio:1/1; display:grid; place-items:center; border-radius:50%;
+  border:2px dashed rgba(251,246,236,.5); color:rgba(251,246,236,.6); }
+.stamp svg{ width:58%; height:58%; }
+.stamp.is-stamped { border-style:solid; border-color:transparent; color:#2a1c08;
+  background:radial-gradient(circle at 35% 30%,var(--amber-2),var(--amber)); box-shadow:0 6px 14px -6px rgba(0,0,0,.4); }
+.stamp.is-reward { border-color:var(--cream); }
+.stamp.is-reward.is-stamped { background:radial-gradient(circle at 35% 30%,#f6d98e,var(--amber-2)); }
+
+/* checklist */
+.ready-item input:checked ~ .ready-check { background:var(--teal); border-color:var(--teal); color:var(--cream); }
+.ready-item input:checked ~ .ready-label { color:var(--teal-ink); }
+.ready-check { transition: background .25s var(--ease-out), border-color .25s var(--ease-out); }
+
+/* day in the life */
+.dil-station.is-past .dil-dot { background:var(--amber-2); border-color:var(--amber-2); transform:scale(1.2); }
+.dil-dot { transition: background .3s var(--ease-out), border-color .3s var(--ease-out), transform .3s var(--ease-out); }
+
+/* marquee + reviews */
+.edge-fade { -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+                     mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent); }
+.reviews-track,.marquee-track { width:max-content; }
+
+/* sticky book bar */
+.booknow-bar { position:fixed; left:0; right:0; bottom:0; z-index:50; transform:translateY(130%); transition:transform .5s var(--ease-out); }
+.booknow-bar.is-visible { transform:translateY(0); }
+@media (min-width:768px){ .booknow-bar{ left:50%; right:auto; bottom:1.5rem; transform:translate(-50%,180%);} .booknow-bar.is-visible{ transform:translate(-50%,0);} }
+
+/* mobile drawer */
+.nav-drawer { transition:transform .4s var(--ease-out), opacity .4s var(--ease-out); transform:translateX(100%); opacity:0; }
+.nav-drawer.is-open { transform:translateX(0); opacity:1; }
+body.menu-open { overflow:hidden; }
+
+/* sticky header */
+[data-site-header]{ transition: background .3s var(--ease-out), box-shadow .3s var(--ease-out); }
+[data-site-header].is-stuck{ background:rgba(251,246,236,.92); box-shadow:0 8px 30px -18px rgba(60,40,16,.4); }
+
+/* ==========================================================================
+   INNER-PAGE HELPERS (services / shop / promotions / about)
+   Added with the build-out of the rest of the site. Same token vocabulary.
+   ========================================================================== */
+
+/* hero quick-jump chips */
+.chip-link { display:inline-flex; align-items:center; gap:.4rem; font-family:"Nunito",sans-serif; font-weight:800;
+  font-size:.9rem; padding:.5rem .9rem; border-radius:999px; background:var(--white); color:var(--ink);
+  box-shadow:var(--shadow-sm); transition:transform .25s var(--ease-out), box-shadow .25s var(--ease-out), color .2s; }
+.chip-link:hover { transform:translateY(-2px); color:var(--teal); box-shadow:var(--shadow); }
+
+/* numbered/labelled section kicker pill */
+.service-kicker { display:inline-block; font-family:"Nunito",sans-serif; font-weight:800; font-size:.78rem;
+  letter-spacing:.12em; text-transform:uppercase; padding:.4rem .8rem; border-radius:999px; }
+
+/* ticked feature list item */
+.feature-li { position:relative; padding-left:1.85rem; color:var(--ink-soft); font-weight:600; }
+.feature-li::before { content:""; position:absolute; left:0; top:.1em; width:1.25rem; height:1.25rem;
+  border-radius:50%; background:radial-gradient(circle at 35% 30%,var(--teal-2),var(--teal));
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 6'/%3E%3C/svg%3E") center/68% no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 6'/%3E%3C/svg%3E") center/68% no-repeat; }
+/* fallback for browsers without mask support: just show the dot */
+@supports not ((-webkit-mask:url("")) or (mask:url(""))) {
+  .feature-li::before { content:"✓"; display:grid; place-items:center; color:#fff; font-size:.7rem; font-weight:900; }
+}
+
+/* daycare pricing plan toggle */
+.plan-btn { font-family:"Nunito",sans-serif; font-weight:800; font-size:.9rem; padding:.55rem 1.1rem;
+  border-radius:14px; color:var(--ink-soft); transition:color .2s, background .25s var(--ease-out), box-shadow .25s var(--ease-out); }
+.plan-btn.is-active { color:var(--teal-ink); background:var(--peach); box-shadow:var(--shadow-sm); }
+
+/* shop aisle band on top of a product card */
+.aisle-band { font-family:"Nunito",sans-serif; font-weight:800; font-size:.72rem; letter-spacing:.1em;
+  text-transform:uppercase; padding:.7rem 1.25rem; color:var(--cream); }
+.aisle-band--teal  { background:linear-gradient(90deg,var(--teal),var(--teal-2)); }
+.aisle-band--amber { background:linear-gradient(90deg,var(--amber),var(--amber-2)); color:#2a1c08; }
+
+/* promotions: today highlight + flag */
+.deal-card { transition:transform .35s var(--ease-out), box-shadow .35s var(--ease-out); }
+.deal-card.is-today { box-shadow:0 0 0 4px var(--amber-2), var(--shadow-lg); transform:translateY(-4px) scale(1.01); }
+.day-flag { position:absolute; top:1.1rem; right:1.1rem; font-family:"Nunito",sans-serif; font-weight:800;
+  font-size:.72rem; padding:.3rem .7rem; border-radius:999px; }
+
+/* promotions: how-it-works step number */
+.step-num { display:grid; place-items:center; width:2.6rem; height:2.6rem; border-radius:16px;
+  font-family:"Nunito",sans-serif; font-weight:900; font-size:1.3rem; color:#2a1c08;
+  background:radial-gradient(circle at 35% 30%,var(--amber-2),var(--amber)); box-shadow:var(--shadow-sm); }
+
+/* reward earned state (punch card) */
+[data-reward].is-earned { color:#fff; font-weight:800; }
+
+/* contact form inputs */
+.form-input { width:100%; border-radius:14px; padding:.8rem 1rem; background:var(--white); color:var(--ink);
+  border:2px solid rgba(60,40,16,.12); outline:none; font-family:inherit; font-size:1rem;
+  transition:border-color .2s var(--ease-out), box-shadow .2s var(--ease-out); }
+.form-input::placeholder { color:rgba(60,40,16,.4); }
+.form-input:focus { border-color:var(--teal-2); box-shadow:0 0 0 4px rgba(44,148,148,.18); }
+.form-input[aria-invalid="true"] { border-color:#c25b3a; box-shadow:0 0 0 4px rgba(194,91,58,.16); }
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:.001ms!important; animation-iteration-count:1!important; transition-duration:.001ms!important; }
+  [data-anim]{ opacity:1!important; transform:none!important; }
+  .cutout--abs{ position:static; }
+}

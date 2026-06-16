@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FBF6EC" />
+  <title>About &amp; Contact — Locally Owned in Marshall, MN · Animal Health Center &amp; Pet Resort</title>
+  <meta name="description" content="Locally owned and family run in Marshall, MN. Meet owner Theresa and staff veterinarian Dr. Scott Kuecker, find our hours, and get in touch with Animal Health Center &amp; Pet Resort." />
+  <meta property="og:title" content="About &amp; Contact — Animal Health Center" />
+  <meta property="og:description" content="Locally owned, family run. Meet the team and visit us in Marshall, MN." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { cream:"#FBF6EC", sand:"#EFE3CE", ink:"#20180F", teal:"#1B6B6B", teal2:"#2c9494",
+        amber:"#C17F24", amber2:"#E6A93F", peach:"#F6D9A8", forest:"#3E6B23", rust:"#9c4a1a" },
+      fontFamily: { heading:["Nunito","system-ui","sans-serif"], body:["Inter","system-ui","sans-serif"] }
+    } } };
+  </script>
+  <link rel="stylesheet" href="css/custom.css" />
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🐾&lt;/text&gt;&lt;/svg&gt;" />
+</head>
+
+<body data-page="about" class="font-body bg-cream text-ink">
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="bg-ink text-cream/85 text-[13px]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-9 flex items-center justify-between gap-4">
+      <span class="hidden sm:flex items-center gap-2 min-w-0">
+        <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-amber2 flex-none"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>
+        <span class="truncate">1300 N. Hwy 59, Marshall, MN</span>
+      </span>
+      <div class="flex items-center gap-4 ml-auto">
+        <span data-hours-badge class="hours-badge is-closed">Checking hours…</span>
+        <a href="tel:+15075325000" class="font-bold text-cream hover:text-amber2 transition-colors">(507) 532-5000</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NAV ===== -->
+  <header data-site-header class="sticky top-0 z-40 bg-cream/70 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center" aria-label="Animal Health Center home"><img src="img/logo.png" alt="Animal Health Center &amp; Pet Resort" class="h-16 w-auto" /></a>
+      <nav class="hidden lg:flex items-center gap-7 text-[15px] font-bold text-ink/70" aria-label="Primary">
+        <a data-nav="services" href="services.html" class="hover:text-teal transition-colors">Services</a>
+        <a data-nav="resort" href="resort.html" class="hover:text-teal transition-colors">Pet Resort</a>
+        <a data-nav="shop" href="shop.html" class="hover:text-teal transition-colors">Shop by Animal</a>
+        <a data-nav="promotions" href="promotions.html" class="hover:text-teal transition-colors">Promotions</a>
+        <a data-nav="about" href="about.html" class="hover:text-teal transition-colors">About</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a data-book class="hidden sm:inline-flex btn btn--amber !py-2.5 !px-4 !text-sm">Book a Stay</a>
+        <button data-menu-toggle class="lg:hidden grid place-items-center w-11 h-11 rounded-xl bg-white shadow-sm text-ink" aria-label="Open menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div data-menu-drawer class="nav-drawer lg:hidden fixed inset-0 z-50 bg-cream text-ink p-6 flex flex-col">
+    <div class="flex items-center justify-between">
+      <span class="font-heading font-900 text-lg">Menu</span>
+      <button data-menu-close class="grid place-items-center w-11 h-11 rounded-xl bg-white shadow-sm" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav class="mt-8 flex flex-col gap-1 text-2xl font-heading font-800" aria-label="Mobile">
+      <a href="services.html" class="py-3 border-b border-ink/10">Services</a>
+      <a href="resort.html" class="py-3 border-b border-ink/10">Pet Resort</a>
+      <a href="shop.html" class="py-3 border-b border-ink/10">Shop by Animal</a>
+      <a href="promotions.html" class="py-3 border-b border-ink/10">Promotions</a>
+      <a href="about.html" class="py-3 border-b border-ink/10">About &amp; Contact</a>
+    </nav>
+    <a data-book class="mt-auto btn btn--amber justify-center">Book the Pet Resort →</a>
+  </div>
+
+  <main>
+
+  <!-- ===================== HERO ===================== -->
+  <section data-booknow-after class="sunrise relative overflow-hidden">
+    <div data-blob class="blob blob--peach w-[28rem] h-[28rem] -left-32 top-0"></div>
+    <div data-blob class="blob blob--teal w-[24rem] h-[24rem] right-[-6rem] top-20"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 pt-14 sm:pt-20 grid lg:grid-cols-[1.05fr_.95fr] gap-8 items-center">
+      <div class="relative z-10 pb-8 lg:pb-0">
+        <p data-hero-line class="inline-flex items-center gap-2 text-teal font-bold text-sm bg-white shadow-sm rounded-full px-4 py-2">
+          <span class="w-2 h-2 rounded-full bg-amber2"></span> Locally owned · family run
+        </p>
+        <h1 class="mt-6 font-heading display text-ink text-[3rem] leading-[.95] sm:text-6xl xl:text-7xl">
+          <span data-hero-line class="block">Your neighbors,</span>
+          <span data-hero-line class="block">in <span class="text-teal">Marshall.</span></span>
+        </h1>
+        <p data-hero-line class="mt-6 text-ink/65 text-lg max-w-md">
+          For 25+ years we've been the one-stop shop for Southwest Minnesota's pets and livestock —
+          knowing our customers (and their animals) by name.
+        </p>
+        <div data-hero-line class="mt-8 flex flex-wrap gap-3">
+          <a href="#contact" class="btn btn--amber">Get in touch →</a>
+          <a href="#visit" class="btn btn--ghost">Hours &amp; directions</a>
+        </div>
+      </div>
+      <div class="relative" data-hero-line>
+        <img src="img/store.jpg" alt="The Animal Health Center storefront" class="rounded-[28px] shadow-lg w-full object-cover aspect-[4/3]" onerror="this.src='img/store2.jpg'"/>
+        <span class="absolute bottom-4 left-4 bg-teal text-cream shadow-lg rounded-2xl px-4 py-3 rotate-[-3deg] z-10">
+          <span class="block font-heading font-900">Since the '90s</span>
+          <span class="block text-cream/80 text-sm">right here on Hwy 59</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS ===================== -->
+  <section class="bg-white border-y border-ink/5 mt-12 sm:mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center" data-anim="cards">
+      <div><p class="font-heading display text-4xl text-teal" data-countup data-to="25" data-suffix="+">25+</p><p class="text-ink/55 text-sm">years in Marshall</p></div>
+      <div><p class="font-heading display text-4xl text-teal" data-countup data-to="7">7</p><p class="text-ink/55 text-sm">species under one roof</p></div>
+      <div><p class="font-heading display text-4xl text-teal" data-countup data-to="6" data-suffix="+">6+</p><p class="text-ink/55 text-sm">team members</p></div>
+      <div><p class="font-heading display text-4xl text-teal" data-countup data-to="100" data-suffix="%">100%</p><p class="text-ink/55 text-sm">locally owned</p></div>
+    </div>
+  </section>
+
+  <!-- ===================== STORY ===================== -->
+  <section class="py-20 sm:py-28 relative overflow-hidden">
+    <div data-blob class="blob blob--amber w-[22rem] h-[22rem] right-[-7rem] top-10"></div>
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 text-center" data-anim="up">
+      <p class="font-heading font-800 text-teal text-sm tracking-[0.2em] uppercase">Our story</p>
+      <h2 class="mt-2 font-heading display text-ink text-4xl sm:text-5xl">One roof for<br />the whole barnyard.</h2>
+      <p class="mt-6 text-ink/70 text-lg leading-relaxed">
+        Animal Health Center started with a simple idea: the folks of Southwest Minnesota shouldn't
+        need three different stops for their dog's food, their cat's litter, and their cattle's vaccines.
+        So we put it all under one roof — a full pet &amp; livestock store, a pet resort for boarding and
+        doggy daycare, on-staff grooming, and a large-animal veterinarian.
+      </p>
+      <p class="mt-4 text-ink/70 text-lg leading-relaxed">
+        In 2020, longtime team member <strong class="text-ink">Theresa</strong> bought the store she'd
+        helped run for years — and kept it exactly what it's always been: local, friendly, and ready for
+        animals big and small. If we don't have it, we'll order it in.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== TEAM ===================== -->
+  <section class="py-20 sm:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl mb-10" data-anim="up">
+        <p class="font-heading font-800 text-teal text-sm tracking-[0.2em] uppercase">The people behind the counter</p>
+        <h2 class="mt-2 font-heading display text-ink text-4xl sm:text-5xl">Meet the team.</h2>
+      </div>
+      <!-- full team photo -->
+      <div class="card-lift card overflow-hidden mb-6" data-anim="up">
+        <img src="img/team.png" alt="The Animal Health Center team" class="w-full object-cover max-h-[420px]" />
+      </div>
+
+      <!-- individual cards -->
+      <div class="grid sm:grid-cols-2 gap-5 items-stretch" data-anim="cards">
+        <article class="card-lift card overflow-hidden flex">
+          <img src="img/Theresa.png" alt="Theresa, owner" class="w-32 sm:w-40 object-cover object-top flex-none self-stretch"/>
+          <div class="p-6"><h3 class="font-heading font-800 text-ink text-xl">Theresa</h3><p class="text-teal text-sm font-bold">Owner</p><p class="mt-2 text-ink/65 text-sm">Bought the store in 2020 after years on the team. Loves time with her grandkids, sewing &amp; puzzles.</p></div>
+        </article>
+        <article class="card-lift card overflow-hidden flex">
+          <img src="img/Dr. Scott.png" alt="Dr. Scott Kuecker" class="w-32 sm:w-40 object-cover object-top flex-none self-stretch"/>
+          <div class="p-6"><h3 class="font-heading font-800 text-ink text-xl">Dr. Scott Kuecker</h3><p class="text-teal text-sm font-bold">Staff Veterinarian</p><p class="mt-2 text-ink/65 text-sm">University of Minnesota grad (1992) with a large-animal focus, caring for area herds for decades.</p></div>
+        </article>
+      </div>
+      <p class="mt-8 text-ink/55">…plus the groomers, kennel staff &amp; friendly faces who know your animals by name.</p>
+    </div>
+  </section>
+
+  <!-- ===================== VISIT / HOURS / MAP ===================== -->
+  <section id="visit" class="py-20 sm:py-28 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+        <!-- info -->
+        <div class="card p-8 bg-white" data-anim="up">
+          <p class="font-heading font-800 text-teal text-sm tracking-[0.2em] uppercase">Visit us</p>
+          <h2 class="mt-2 font-heading display text-ink text-3xl sm:text-4xl">Stop by &amp; say hi.</h2>
+
+          <div class="mt-7 space-y-5">
+            <div class="flex items-start gap-3">
+              <span class="grid place-items-center w-10 h-10 rounded-xl bg-teal/10 text-teal flex-none"><svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg></span>
+              <div><p class="font-heading font-800 text-ink">Address</p><p class="text-ink/65">1300 N. Hwy 59, Marshall, MN 56258</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="grid place-items-center w-10 h-10 rounded-xl bg-teal/10 text-teal flex-none"><svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2Z"/></svg></span>
+              <div><p class="font-heading font-800 text-ink">Phone</p><a href="tel:+15075325000" class="text-teal font-bold hover:underline">(507) 532-5000</a></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="grid place-items-center w-10 h-10 rounded-xl bg-teal/10 text-teal flex-none"><svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 10.4 4 2.3-1 1.7-5-2.9V6h2v6.4Z"/></svg></span>
+              <div class="flex-1">
+                <p class="font-heading font-800 text-ink">Hours</p>
+                <ul class="mt-1 space-y-1 text-sm text-ink/65 max-w-xs">
+                  <li class="flex justify-between gap-4"><span>Mon – Fri</span><span class="text-ink">8:00am – 5:30pm</span></li>
+                  <li class="flex justify-between gap-4"><span>Saturday</span><span class="text-ink">8:00am – 12:00pm</span></li>
+                  <li class="flex justify-between gap-4"><span>Sunday</span><span class="text-ink/45">Closed</span></li>
+                </ul>
+                <span data-hours-badge class="hours-badge is-closed mt-3">Checking hours…</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href="https://www.google.com/maps/search/?api=1&query=1300+N+Hwy+59+Marshall+MN+56258" target="_blank" rel="noopener" class="btn btn--teal">Get directions →</a>
+            <a href="https://www.facebook.com/animalhealthcentermn/" target="_blank" rel="noopener" class="btn btn--ghost">Find us on Facebook</a>
+          </div>
+        </div>
+
+        <!-- map embed -->
+        <div class="card overflow-hidden min-h-[22rem]" data-anim="up">
+          <iframe
+            title="Map to Animal Health Center, Marshall MN"
+            class="w-full h-full min-h-[22rem]"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=1300%20N%20Hwy%2059%20Marshall%20MN%2056258&t=&z=14&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT FORM ===================== -->
+  <section id="contact" class="py-20 sm:py-28 bg-white relative overflow-hidden scroll-mt-24">
+    <div data-blob class="blob blob--teal w-[24rem] h-[24rem] -left-28 top-10"></div>
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10" data-anim="up">
+        <p class="font-heading font-800 text-teal text-sm tracking-[0.2em] uppercase">Send a message</p>
+        <h2 class="mt-2 font-heading display text-ink text-4xl sm:text-5xl">Got a question?</h2>
+        <p class="mt-4 text-ink/60 text-lg">Drop us a note about grooming, a stay, a product, or anything else — we'll get back to you.</p>
+      </div>
+
+      <form data-widget="contact" class="card p-7 sm:p-9 bg-cream" novalidate data-anim="up">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="cName" class="block text-sm font-bold text-ink mb-1.5">Your name</label>
+            <input id="cName" name="name" type="text" required class="form-input" placeholder="Jane Doe"/>
+          </div>
+          <div>
+            <label for="cEmail" class="block text-sm font-bold text-ink mb-1.5">Email</label>
+            <input id="cEmail" name="email" type="email" required class="form-input" placeholder="you@email.com"/>
+          </div>
+        </div>
+        <div class="mt-5">
+          <label for="cTopic" class="block text-sm font-bold text-ink mb-1.5">What's it about?</label>
+          <select id="cTopic" name="topic" class="form-input">
+            <option>General question</option>
+            <option>Grooming</option>
+            <option>Boarding &amp; daycare</option>
+            <option>Store &amp; products</option>
+            <option>Large-animal vet care</option>
+          </select>
+        </div>
+        <div class="mt-5">
+          <label for="cMsg" class="block text-sm font-bold text-ink mb-1.5">Message</label>
+          <textarea id="cMsg" name="message" rows="4" required class="form-input" placeholder="How can we help you and your animals?"></textarea>
+        </div>
+        <div class="mt-6 flex items-center gap-4 flex-wrap">
+          <button type="submit" class="btn btn--amber">Send message →</button>
+          <p data-form-status class="text-sm font-semibold" role="status" aria-live="polite"></p>
+        </div>
+        <p class="mt-4 text-xs text-ink/45">Demo form — this sample simulates a send and doesn't deliver mail yet. Prefer to talk? Call <a href="tel:+15075325000" class="text-teal font-bold">(507) 532-5000</a>.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
+      <div class="rounded-[2rem] bg-gradient-to-br from-amber2 to-amber text-ink p-10 sm:p-16 text-center relative overflow-hidden dotgrid">
+        <div class="relative" data-anim="up">
+          <h2 class="font-heading display text-4xl sm:text-5xl">We'd love to meet<br />you &amp; your animals.</h2>
+          <p class="mt-4 text-ink/75 text-lg max-w-xl mx-auto">Stop in, book a stay, or give us a call — the door's open six days a week.</p>
+          <div class="mt-8 flex flex-wrap gap-3 justify-center"><a data-book class="btn btn--ink">Book the Pet Resort →</a><a href="tel:+15075325000" class="btn btn--ghost">Call (507) 532-5000</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-ink text-cream/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <div><img src="img/logo.png" alt="Animal Health Center &amp; Pet Resort" class="h-16 w-auto brightness-0 invert" /></div>
+        <p class="mt-4 text-sm">Southwest Minnesota's one-stop shop for pets and livestock — big animals &amp; small. Locally owned in Marshall, MN.</p>
+        <a href="https://www.facebook.com/animalhealthcentermn/" target="_blank" rel="noopener" aria-label="Facebook" class="mt-4 inline-grid place-items-center w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"><svg viewBox="0 0 24 24" class="w-5 h-5 fill-cream"><path d="M13 22v-8h3l.5-3.5H13V8.3c0-1 .3-1.7 1.8-1.7H17V3.4A26 26 0 0 0 14.6 3C12 3 10 4.6 10 7.7v2.8H7V14h3v8Z"/></svg></a>
+      </div>
+      <div><h4 class="font-heading font-800 text-cream">Explore</h4><ul class="mt-3 space-y-2 text-sm"><li><a href="services.html" class="hover:text-amber2 transition-colors">Our Services</a></li><li><a href="resort.html" class="hover:text-amber2 transition-colors">Pet Resort</a></li><li><a href="shop.html" class="hover:text-amber2 transition-colors">Shop by Animal</a></li><li><a href="promotions.html" class="hover:text-amber2 transition-colors">Promotions &amp; Rewards</a></li><li><a href="about.html" class="hover:text-amber2 transition-colors">About &amp; Contact</a></li></ul></div>
+      <div><h4 class="font-heading font-800 text-cream">Hours</h4><ul class="mt-3 space-y-1.5 text-sm"><li class="flex justify-between gap-4"><span>Mon – Fri</span><span class="text-cream">8:00am – 5:30pm</span></li><li class="flex justify-between gap-4"><span>Saturday</span><span class="text-cream">8:00am – 12:00pm</span></li><li class="flex justify-between gap-4"><span>Sunday</span><span class="text-cream/50">Closed</span></li></ul><span data-hours-badge class="hours-badge is-closed mt-3">Checking hours…</span></div>
+      <div><h4 class="font-heading font-800 text-cream">Visit / Call</h4><p class="mt-3 text-sm">1300 N. Hwy 59<br />Marshall, MN 56258</p><a href="tel:+15075325000" class="mt-2 inline-block font-heading font-800 text-cream text-lg hover:text-amber2 transition-colors">(507) 532-5000</a><a data-book class="mt-4 btn btn--amber !py-2.5 !px-4 !text-sm">Book the Pet Resort →</a></div>
+    </div>
+    <div class="border-t border-white/10"><div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-wrap items-center justify-between gap-2 text-xs text-cream/50"><p>© <span data-year>2026</span> Animal Health Center &amp; Pet Resort. All rights reserved.</p><p>For animals big &amp; small.</p></div></div>
+  </footer>
+
+  <!-- ===================== STICKY BOOK BAR ===================== -->
+  <div data-booknow-bar class="booknow-bar">
+    <div class="bg-ink text-cream md:rounded-2xl md:shadow-2xl">
+      <div class="max-w-7xl md:max-w-none mx-auto px-4 py-3 flex items-center justify-between gap-3 md:gap-6">
+        <span class="hidden sm:block font-heading font-800 text-sm">Ready when you are.</span>
+        <div class="flex items-center gap-2.5 ml-auto"><a data-book class="btn btn--amber !py-2.5 !px-4 !text-sm">Book a Stay</a><a href="tel:+15075325000" class="btn !py-2.5 !px-4 !text-sm bg-white/10 text-cream">Call Us</a></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/widgets.js" defer></script>
+  <script src="js/animations.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FBF6EC" />
+  <title>Animal Health Center &amp; Pet Resort — Marshall, MN · For Animals Big &amp; Small</title>
+  <meta name="description" content="Southwest Minnesota's one-stop shop for pets and livestock. Grooming, doggy daycare, dog &amp; cat boarding, retail, and large-animal veterinary care in Marshall, MN. Book the Pet Resort online." />
+  <meta property="og:title" content="Animal Health Center &amp; Pet Resort — Marshall, MN" />
+  <meta property="og:description" content="One roof for dogs, cats, cattle, swine, equine, sheep &amp; goats. Pet Resort boarding &amp; daycare, grooming, retail, and vet care." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { cream:"#FBF6EC", sand:"#EFE3CE", ink:"#20180F", teal:"#1B6B6B", teal2:"#2c9494",
+        amber:"#C17F24", amber2:"#E6A93F", peach:"#F6D9A8", forest:"#3E6B23", rust:"#9c4a1a" },
+      fontFamily: { heading:["Nunito","system-ui","sans-serif"], body:["Inter","system-ui","sans-serif"] }
+    } } };
+  </script>
+  <link rel="stylesheet" href="css/custom.css" />
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🐾&lt;/text&gt;&lt;/svg&gt;" />
+</head>
+
+<body data-page="home" class="font-body bg-cream text-ink">
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="bg-ink text-cream/85 text-[13px]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-9 flex items-center justify-between gap-4">
+      <span class="hidden sm:flex items-center gap-2 min-w-0">
+        <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-amber2 flex-none"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>
+        <span class="truncate">1300 N. Hwy 59, Marshall, MN</span>
+      </span>
+      <div class="flex items-center gap-4 ml-auto">
+        <span data-hours-badge class="hours-badge is-closed">Checking hours…</span>
+        <a href="tel:+15075325000" class="font-bold text-cream hover:text-amber2 transition-colors">(507) 532-5000</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NAV ===== -->
+  <header data-site-header class="sticky top-0 z-40 bg-cream/70 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center" aria-label="Animal Health Center home"><img src="img/logo.png" alt="Animal Health Center &amp; Pet Resort" class="h-16 w-auto" /></a>
+      <nav class="hidden lg:flex items-center gap-7 text-[15px] font-bold text-ink/70" aria-label="Primary">
+        <a data-nav="services" href="services.html" class="hover:text-teal transition-colors">Services</a>
+        <a data-nav="resort" href="resort.html" class="hover:text-teal transition-colors">Pet Resort</a>
+        <a data-nav="shop" href="shop.html" class="hover:text-teal transition-colors">Shop by Animal</a>
+        <a data-nav="promotions" href="promotions.html" class="hover:text-teal transition-colors">Promotions</a>
+        <a data-nav="about" href="about.html" class="hover:text-teal transition-colors">About</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a data-book class="hidden sm:inline-flex btn btn--amber !py-2.5 !px-4 !text-sm">Book a Stay</a>
+        <button data-menu-toggle class="lg:hidden grid place-items-center w-11 h-11 rounded-xl bg-white shadow-sm text-ink" aria-label="Open menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div data-menu-drawer class="nav-drawer lg:hidden fixed inset-0 z-50 bg-cream text-ink p-6 flex flex-col">
+    <div class="flex items-center justify-between">
+      <span class="font-heading font-900 text-lg">Menu</span>
+      <button data-menu-close class="grid place-items-center w-11 h-11 rounded-xl bg-white shadow-sm" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav class="mt-8 flex flex-col gap-1 text-2xl font-heading font-800" aria-label="Mobile">
+      <a href="services.html" class="py-3 border-b border-ink/10">Services</a>
+      <a href="resort.html" class="py-3 border-b border-ink/10">Pet Resort</a>
+      <a href="shop.html" class="py-3 border-b border-ink/10">Shop by Animal</a>
+      <a href="promotions.html" class="py-3 border-b border-ink/10">Promotions</a>
+      <a href="about.html" class="py-3 border-b border-ink/10">About &amp; Contact</a>
+    </nav>
+    <a data-book class="mt-auto btn btn--amber justify-center">Book the Pet Resort →</a>
+  </div>
+
+  <main>
+
+  <!-- ===================== HERO — bright, dog + horse duo ===================== -->
+  <section data-hero data-booknow-after class="sunrise relative overflow-hidden">
+    <!-- soft scenery -->
+    <div data-blob class="blob blob--teal w-[30rem] h-[30rem] -left-32 top-10"></div>
+    <div data-blob class="blob blob--peach w-[26rem] h-[26rem] right-[-6rem] top-24"></div>
+    <div class="soft-glow bg-amber2/30 w-[24rem] h-[24rem] left-1/2 -bottom-24"></div>
+
+    <!-- full-width layout: rancher | copy  (animals are absolute, right side) -->
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 flex items-center min-h-[84vh]">
+
+      <!-- rancher — absolute, bottom-left, own space, never overlaps copy -->
+      <div class="hidden lg:block absolute left-0 bottom-0 w-[220px] z-0 pointer-events-none select-none" aria-hidden="true">
+        <img src="img/transparent/rancher with his dog showing a thumbs up.png" alt=""
+             class="w-full h-auto object-contain"
+             style="filter:drop-shadow(0 12px 28px rgba(32,24,15,.25))" />
+      </div>
+
+      <!-- copy — centred vertically, left margin clears the rancher on desktop -->
+      <div class="relative z-10 w-full max-w-xl lg:ml-[240px] py-16">
+        <p data-hero-line class="inline-flex items-center gap-2 text-teal font-bold text-sm bg-white shadow-sm rounded-full px-4 py-2">
+          <span class="w-2 h-2 rounded-full bg-amber2"></span> One roof · pets &amp; livestock · Marshall, MN
+        </p>
+        <h1 class="mt-6 font-heading display text-ink text-[3.6rem] leading-[.92] sm:text-7xl xl:text-[5.4rem]">
+          <span data-hero-line class="block">For animals</span>
+          <span data-hero-line class="block">big <span class="text-amber">&amp;</span> <span class="text-teal">small.</span></span>
+        </h1>
+        <p data-hero-line class="mt-6 text-ink/65 text-lg max-w-md">
+          Southwest Minnesota's one-stop shop — a full pet &amp; livestock store, a pet resort
+          for boarding &amp; doggy daycare, on-staff grooming, and large-animal vet care.
+        </p>
+        <div data-hero-line class="mt-8 flex flex-wrap gap-3">
+          <a data-book class="btn btn--amber">Book the Pet Resort →</a>
+          <a href="shop.html" class="btn btn--ghost">Shop by Animal</a>
+        </div>
+        <div data-hero-line class="mt-9 flex items-center gap-5 flex-wrap">
+          <span class="flex items-center gap-2 text-ink/60 text-sm"><span class="text-amber text-base">★★★★★</span> Marshall-loved</span>
+          <span class="inline-flex items-center gap-3 bg-white rounded-2xl shadow-md px-4 py-2.5 border border-ink/8">
+            <span class="font-heading font-900 text-ink text-3xl leading-none" data-countup data-to="25" data-suffix="+">25+</span>
+            <span class="text-ink/55 text-sm leading-tight">years<br />serving you</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- animals — absolute right, fills right portion of viewport -->
+      <div class="hidden lg:block absolute right-0 bottom-0 w-[42%] h-[80vh] pointer-events-none" aria-hidden="false">
+        <!-- horse (back-left of animal group) -->
+        <div data-hero-star data-rate="5" class="absolute left-[0%] bottom-0 w-[50%]">
+          <span class="ground-shadow"></span>
+          <img src="img/transparent/horse.png" alt="A horse" class="cutout w-full h-auto" onerror="this.parentElement.style.display='none'" />
+        </div>
+        <!-- dog (center, bobs) -->
+        <div data-hero-star data-rate="11" data-bob class="absolute left-[30%] bottom-0 w-[46%] z-[3]">
+          <span class="ground-shadow"></span>
+          <img src="img/transparent/dog-sitting.png" alt="A golden retriever" class="cutout w-full h-auto" onerror="this.parentElement.style.display='none'" />
+        </div>
+        <!-- cat — far right corner, proper size -->
+        <div data-hero-star data-rate="14" data-bob class="absolute right-[0%] bottom-0 w-[28%] z-[5]">
+          <span class="ground-shadow"></span>
+          <img src="img/transparent/hero-cat.png" alt="A cat" class="cutout w-full h-auto" onerror="this.parentElement.style.display='none'" />
+        </div>
+      </div>
+
+      <!-- mobile: animals stack below copy -->
+      <div class="lg:hidden absolute bottom-0 right-0 w-[55%] h-[40vh]">
+        <div class="absolute left-0 bottom-0 w-[55%]"><span class="ground-shadow"></span><img src="img/transparent/horse.png" alt="" class="cutout w-full h-auto" /></div>
+        <div class="absolute right-0 bottom-0 w-[50%] z-[3]"><span class="ground-shadow"></span><img src="img/transparent/dog-sitting.png" alt="" class="cutout w-full h-auto" /></div>
+      </div>
+    </div>
+
+    <!-- marquee strip -->
+    <div data-carousel class="relative z-10 border-t border-ink/10 bg-white/50 backdrop-blur-sm">
+      <div class="edge-fade overflow-hidden py-3.5">
+        <div data-autoscroll="32" class="marquee-track flex items-center gap-9 px-6 text-ink/45 font-heading font-800 text-lg whitespace-nowrap">
+          <span>Dogs</span><span class="text-amber/50">·</span><span>Cats</span><span class="text-amber/50">·</span><span>Equine</span><span class="text-amber/50">·</span><span>Cattle</span><span class="text-amber/50">·</span><span>Swine</span><span class="text-amber/50">·</span><span>Goats</span><span class="text-amber/50">·</span><span>Sheep</span><span class="text-amber">· All under one roof ·</span>
+          <span aria-hidden="true">Dogs</span><span aria-hidden="true" class="text-amber/50">·</span><span aria-hidden="true">Cats</span><span aria-hidden="true" class="text-amber/50">·</span><span aria-hidden="true">Equine</span><span aria-hidden="true" class="text-amber/50">·</span><span aria-hidden="true">Cattle</span><span aria-hidden="true" class="text-amber/50">·</span><span aria-hidden="true">Swine</span><span aria-hidden="true" class="text-amber/50">·</span><span aria-hidden="true">Goats</span><span aria-hidden="true" class="text-amber/50">·</span><span aria-hidden="true">Sheep</span><span aria-hidden="true" class="text-amber">· All under one roof ·</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PET PROFILE BUILDER ===================== -->
+  <section class="py-20 sm:py-28 relative" data-pet-scope>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl" data-anim="up">
+        <p class="font-heading font-800 text-teal text-sm tracking-[0.2em] uppercase">Shop by animal</p>
+        <h2 class="mt-2 font-heading display text-ink text-4xl sm:text-5xl">Who are you<br />caring for today?</h2>
+        <p class="mt-4 text-ink/60 text-lg">Pick an animal — we'll show what we stock and the services for them. Pets and livestock, same roof.</p>
+      </div>
+
+      <div data-widget="profile" data-default="dog" class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Dogs tile -->
+        <button data-pet-tile="dog" class="pet-tile group text-center card overflow-hidden relative">
+          <div class="relative bg-gradient-to-b from-sand/60 to-cream h-44 overflow-hidden flex items-end justify-center">
+            <img src="img/transparent/different dogs.png" alt="Various dog breeds" class="w-full h-full object-contain object-bottom scale-110 group-hover:scale-[1.15] transition-transform duration-500" onerror="this.parentElement.style.background='#EFE3CE'"/>
+          </div>
+          <span class="flex items-center justify-center px-5 py-4 bg-cream border-t border-ink/8"><span class="font-heading font-900 text-ink text-lg">Dogs</span></span>
+        </button>
+        <!-- Cats tile -->
+        <button data-pet-tile="cat" class="pet-tile group text-center card overflow-hidden relative">
+          <div class="relative bg-gradient-to-b from-peach/50 to-cream h-44 overflow-hidden flex items-end justify-center">
+            <img src="img/transparent/different cats.png" alt="Various cat breeds" class="w-full h-full object-contain object-bottom scale-110 group-hover:scale-[1.15] transition-transform duration-500" onerror="this.parentElement.style.background='#F6D9A8'"/>
+          </div>
+          <span class="flex items-center justify-center px-5 py-4 bg-cream border-t border-ink/8"><span class="font-heading font-900 text-ink text-lg">Cats</span></span>
+        </button>
+        <!-- Equine tile -->
+        <button data-pet-tile="horse" class="pet-tile group text-center card overflow-hidden relative">
+          <div class="relative bg-gradient-to-b from-teal/15 to-cream h-44 overflow-hidden flex items-end justify-center">
+            <img src="img/transparent/different horses.png" alt="Various horse breeds" class="w-full h-full object-contain object-bottom scale-110 group-hover:scale-[1.15] transition-transform duration-500" onerror="this.parentElement.style.background='#EFE3CE'"/>
+          </div>
+          <span class="flex items-center justify-center px-5 py-4 bg-cream border-t border-ink/8"><span class="font-heading font-900 text-ink text-lg">Equine</span></span>
+        </button>
+        <!-- Farm tile -->
+        <button data-pet-tile="farm" class="pet-tile group text-center card overflow-hidden relative">
+          <div class="relative bg-gradient-to-b from-amber/20 to-cream h-44 overflow-hidden flex items-end justify-center">
+            <img src="img/transparent/farm animals.png" alt="Farm animals" class="w-full h-full object-contain object-bottom scale-110 group-hover:scale-[1.15] transition-transform duration-500" onerror="this.parentElement.style.background='#EFE3CE'"/>
+          </div>
+          <span class="flex items-center justify-center px-5 py-4 bg-cream border-t border-ink/8"><span class="font-heading font-900 text-ink text-lg">Farm</span></span>
+        </button>
+      </div>
+
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <article data-pet="dog" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Premium dog food</h3><p class="text-ink/60 text-sm mt-1">Fromm, NutriSource, Diamond, Royal Canin, Purina Pro Plan.</p></article>
+        <article data-pet="dog" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Daycare &amp; boarding</h3><p class="text-ink/60 text-sm mt-1">Two play rooms split by size, plus boarding suites.</p></article>
+        <article data-pet="dog" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Grooming</h3><p class="text-ink/60 text-sm mt-1">Bathing, brushing &amp; nails by our on-staff groomers.</p></article>
+        <article data-pet="cat" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Kitty Korral boarding</h3><p class="text-ink/60 text-sm mt-1">Quiet cat suites — $20/day, $17 each additional cat.</p></article>
+        <article data-pet="cat" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Cat food &amp; litter</h3><p class="text-ink/60 text-sm mt-1">Royal Canin, Fromm, NutriSource, treats &amp; supplies.</p></article>
+        <article data-pet="horse" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Equine vaccines &amp; wormers</h3><p class="text-ink/60 text-sm mt-1">Plus minerals and everyday tack-room essentials.</p></article>
+        <article data-pet="farm" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Cattle &amp; swine health</h3><p class="text-ink/60 text-sm mt-1">Merck, Zoetis, Boehringer vaccines, implants, VFD feed.</p></article>
+        <article data-pet="farm" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Sheep &amp; goat supplies</h3><p class="text-ink/60 text-sm mt-1">Vaccines, wormers, minerals &amp; general livestock care.</p></article>
+        <article data-pet="farm" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Large-animal vet</h3><p class="text-ink/60 text-sm mt-1">On-staff veterinarian Dr. Scott Kuecker.</p></article>
+      </div>
+      <div class="mt-8" data-anim="up"><a href="shop.html" class="inline-flex items-center gap-2 font-heading font-800 text-teal hover:gap-3 transition-all">Open the full Shop by Animal →</a></div>
+    </div>
+  </section>
+
+  <div class="paw-divider" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="10" r="2"/><circle cx="12" cy="8" r="2"/><circle cx="18" cy="10" r="2"/><path d="M12 12c-3 0-5 2-5 4s2 3 5 3 5-1 5-3-2-4-5-4Z"/></svg></div>
+
+  <!-- ===================== SERVICES (light cards w/ photos) ===================== -->
+  <section class="py-20 sm:py-28 bg-white relative overflow-hidden">
+    <div class="soft-glow bg-teal2/15 w-[26rem] h-[26rem] -left-20 top-10"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl" data-anim="up">
+        <p class="font-heading font-800 text-teal text-sm tracking-[0.2em] uppercase">What we do</p>
+        <h2 class="mt-2 font-heading display text-ink text-4xl sm:text-5xl">Everything your<br />animals need.</h2>
+        <p class="mt-4 text-ink/60 text-lg">From the grooming tub to the feed aisle. Tap any service for full details &amp; pricing.</p>
+      </div>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5" data-anim="cards">
+        <a href="services.html" class="card-lift card overflow-hidden block">
+          <img src="img/20240524_134111-768x576.jpg" alt="Grooming" class="h-44 w-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1591946614720-90a587da4a36?auto=format&fit=crop&w=600&q=70'"/>
+          <div class="p-5"><h3 class="font-heading font-800 text-ink">Pet Grooming</h3><p class="text-ink/60 text-sm mt-1">Bathing, brushing &amp; nails for dogs and cats.</p></div></a>
+        <a href="resort.html" class="card-lift card overflow-hidden block">
+          <img src="img/Large Dog Daycare Room.jpg" alt="Daycare" class="h-44 w-full object-cover"/>
+          <div class="p-5"><h3 class="font-heading font-800 text-ink">Doggy Daycare</h3><p class="text-ink/60 text-sm mt-1">Two indoor rooms, split by size. From $12/day.</p></div></a>
+        <a href="resort.html" class="card-lift card overflow-hidden block">
+          <img src="img/CAT BOARDING SERVICES2.jpg" alt="Boarding" class="h-44 w-full object-cover"/>
+          <div class="p-5"><h3 class="font-heading font-800 text-ink">Boarding</h3><p class="text-ink/60 text-sm mt-1">Dog suites &amp; the cozy Kitty Korral for cats.</p></div></a>
+        <a href="shop.html" class="card-lift card overflow-hidden block">
+          <img src="img/store2.jpg" alt="Store &amp; vet" class="h-44 w-full object-cover"/>
+          <div class="p-5"><h3 class="font-heading font-800 text-ink">Store &amp; Vet</h3><p class="text-ink/60 text-sm mt-1">Pet &amp; livestock retail plus large-animal vet care.</p></div></a>
+      </div>
+      <div class="mt-8" data-anim="up"><a href="services.html" class="inline-flex items-center gap-2 font-heading font-800 text-teal hover:gap-3 transition-all">See all services &amp; pricing →</a></div>
+    </div>
+  </section>
+
+  <!-- ===================== COWBOY / RANCH (warm, not dark) ===================== -->
+  <section id="ranch" data-ranch class="ranch relative py-20 sm:py-28">
+    <div class="ranch-ground"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl" data-anim="up">
+        <p class="font-heading font-800 text-rust text-sm tracking-[0.25em] uppercase">From the barn to the back door</p>
+        <h2 class="mt-2 font-heading display text-4xl sm:text-6xl">Stocked for every<br />head you raise.</h2>
+        <p class="mt-4 text-[#5a3f1d] text-lg max-w-xl">Cattle, swine, equine, sheep &amp; goats — name-brand vaccines, wormers, feed, implants, and VFD products. If we don't have it, we'll get it. And Dr. Kuecker is right here for the large-animal calls.</p>
+        <div data-lasso class="lasso-rope mt-6 max-w-xs"></div>
+      </div>
+
+      <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6 items-end">
+        <figure data-livestock class="text-center">
+          <div class="relative inline-block"><span class="ground-shadow"></span><img src="img/transparent/horse.png" alt="Horse" class="cutout h-40 sm:h-56 w-auto mx-auto" onerror="this.style.display='none'"/></div>
+          <figcaption class="mt-3 font-heading font-900 text-[#3a2510]">Equine</figcaption><p class="text-[#5a3f1d] text-sm">Vaccines · wormers · minerals</p>
+        </figure>
+        <figure data-livestock class="text-center">
+          <div class="relative inline-block"><span class="ground-shadow"></span><img src="img/transparent/cow-calf.png" alt="Angus cow and calf" class="cutout h-40 sm:h-56 w-auto mx-auto" onerror="this.style.display='none'"/></div>
+          <figcaption class="mt-3 font-heading font-900 text-[#3a2510]">Cattle</figcaption><p class="text-[#5a3f1d] text-sm">Merck · Zoetis · implants · VFD</p>
+        </figure>
+        <figure data-livestock class="text-center">
+          <div class="relative inline-block"><span class="ground-shadow"></span><img src="img/transparent/pig.png" alt="Pig" class="cutout h-32 sm:h-44 w-auto mx-auto" onerror="this.style.display='none'"/></div>
+          <figcaption class="mt-3 font-heading font-900 text-[#3a2510]">Swine</figcaption><p class="text-[#5a3f1d] text-sm">PRRS · Circo · Myco · feed</p>
+        </figure>
+        <figure data-livestock class="text-center">
+          <div class="relative inline-block"><span class="ground-shadow"></span><img src="img/transparent/goat.png" alt="Goat" class="cutout h-36 sm:h-52 w-auto mx-auto" onerror="this.style.display='none'"/></div>
+          <figcaption class="mt-3 font-heading font-900 text-[#3a2510]">Sheep &amp; Goats</figcaption><p class="text-[#5a3f1d] text-sm">Vaccines · wormers · minerals</p>
+        </figure>
+      </div>
+      <div class="mt-12 text-center" data-anim="up"><a href="shop.html" class="btn btn--ink">Browse the ranch aisle →</a></div>
+    </div>
+  </section>
+
+  <!-- ===================== WEEKLY PROMOTIONS ===================== -->
+  <section class="py-20 sm:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-wrap items-end justify-between gap-4" data-anim="up">
+        <div class="max-w-2xl"><p class="font-heading font-800 text-teal text-sm tracking-[0.2em] uppercase">This week</p><h2 class="mt-2 font-heading display text-ink text-4xl sm:text-5xl">A new deal every day.</h2></div>
+        <a href="promotions.html" class="font-heading font-800 text-teal hover:gap-3 inline-flex items-center gap-2 transition-all">All weekly deals →</a>
+      </div>
+      <div data-widget="promos" class="mt-10 grid sm:grid-cols-2 gap-5">
+        <article data-day="1" class="relative card overflow-hidden p-7 bg-gradient-to-br from-teal to-teal2 text-cream">
+          <span data-day-flag hidden class="absolute top-5 right-5 text-xs font-heading font-800 bg-amber2 text-ink px-2.5 py-1 rounded-full">Today's deal</span>
+          <p class="font-heading font-800 text-peach text-sm">Monday</p><h3 class="mt-1 font-heading font-900 text-2xl">Mutt Madness</h3>
+          <p class="mt-2 text-cream/85">15% off all dog treats &amp; chews — start the week with a wagging tail.</p>
+        </article>
+        <article data-day="3" class="relative card overflow-hidden p-7 bg-gradient-to-br from-amber2 to-amber text-ink">
+          <span data-day-flag hidden class="absolute top-5 right-5 text-xs font-heading font-800 bg-ink text-cream px-2.5 py-1 rounded-full">Today's deal</span>
+          <p class="font-heading font-800 text-rust text-sm">Wednesday</p><h3 class="mt-1 font-heading font-900 text-2xl">Whisker Wednesday</h3>
+          <p class="mt-2 text-ink/80">BOGO 50% off cat toys, plus $2 off any bag of cat food.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== REVIEWS ===================== -->
+  <section class="py-20 sm:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl mb-10" data-anim="up"><p class="font-heading font-800 text-teal text-sm tracking-[0.2em] uppercase">From the neighbors we serve</p><h2 class="mt-2 font-heading display text-ink text-4xl sm:text-5xl">Trusted across<br />Southwest Minnesota.</h2></div>
+    </div>
+    <div data-carousel class="edge-fade overflow-hidden">
+      <div data-autoscroll="40" class="reviews-track flex gap-5 px-4 sm:px-6">
+        <figure class="w-[300px] sm:w-[380px] flex-none card p-7 bg-cream"><div class="text-amber">★★★★★</div><blockquote class="mt-2 text-ink/80">"Our dog comes home from daycare happy and worn out, and the boarding suites give us total peace of mind."</blockquote><figcaption class="mt-3 font-heading font-800 text-ink">Sarah M. <span class="text-ink/45 font-body font-normal text-sm">· with Bailey</span></figcaption></figure>
+        <figure class="w-[300px] sm:w-[380px] flex-none card p-7 bg-cream"><div class="text-amber">★★★★★</div><blockquote class="mt-2 text-ink/80">"One stop and I've got cattle vaccines, calf supplies, and a bag of dog food. If they don't have it, they order it in."</blockquote><figcaption class="mt-3 font-heading font-800 text-ink">Dan R. <span class="text-ink/45 font-body font-normal text-sm">· cattle producer</span></figcaption></figure>
+        <figure class="w-[300px] sm:w-[380px] flex-none card p-7 bg-cream"><div class="text-amber">★★★★★</div><blockquote class="mt-2 text-ink/80">"The grooming team always makes my cat look great. Friendly, local, and they know us by name."</blockquote><figcaption class="mt-3 font-heading font-800 text-ink">Karen L. <span class="text-ink/45 font-body font-normal text-sm">· with Miso</span></figcaption></figure>
+        <figure class="w-[300px] sm:w-[380px] flex-none card p-7 bg-cream"><div class="text-amber">★★★★★</div><blockquote class="mt-2 text-ink/80">"The Kitty Korral is the only place our cat actually seems relaxed when we travel. Can't recommend it enough."</blockquote><figcaption class="mt-3 font-heading font-800 text-ink">Megan T. <span class="text-ink/45 font-body font-normal text-sm">· with Pepper</span></figcaption></figure>
+        <figure class="w-[300px] sm:w-[380px] flex-none card p-7 bg-cream"><div class="text-amber">★★★★★</div><blockquote class="mt-2 text-ink/80">"Dr. Kuecker has helped our herd for years. Knowledgeable, honest, and right here in town."</blockquote><figcaption class="mt-3 font-heading font-800 text-ink">Travis K. <span class="text-ink/45 font-body font-normal text-sm">· hog &amp; cattle farm</span></figcaption></figure>
+        <figure aria-hidden="true" class="w-[300px] sm:w-[380px] flex-none card p-7 bg-cream"><div class="text-amber">★★★★★</div><blockquote class="mt-2 text-ink/80">"Our dog comes home from daycare happy and worn out, and the boarding suites give us total peace of mind."</blockquote><figcaption class="mt-3 font-heading font-800 text-ink">Sarah M. <span class="text-ink/45 font-body font-normal text-sm">· with Bailey</span></figcaption></figure>
+        <figure aria-hidden="true" class="w-[300px] sm:w-[380px] flex-none card p-7 bg-cream"><div class="text-amber">★★★★★</div><blockquote class="mt-2 text-ink/80">"One stop and I've got cattle vaccines, calf supplies, and a bag of dog food. If they don't have it, they order it in."</blockquote><figcaption class="mt-3 font-heading font-800 text-ink">Dan R. <span class="text-ink/45 font-body font-normal text-sm">· cattle producer</span></figcaption></figure>
+        <figure aria-hidden="true" class="w-[300px] sm:w-[380px] flex-none card p-7 bg-cream"><div class="text-amber">★★★★★</div><blockquote class="mt-2 text-ink/80">"The grooming team always makes my cat look great. Friendly, local, and they know us by name."</blockquote><figcaption class="mt-3 font-heading font-800 text-ink">Karen L. <span class="text-ink/45 font-body font-normal text-sm">· with Miso</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LOYALTY PUNCH CARD ===================== -->
+  <section class="py-20 sm:py-28 relative overflow-hidden">
+    <div data-blob class="blob blob--amber w-[24rem] h-[24rem] right-[-6rem] top-6"></div>
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 items-center">
+      <div data-anim="up">
+        <p class="font-heading font-800 text-teal text-sm tracking-[0.2em] uppercase">Rewards</p>
+        <h2 class="mt-2 font-heading display text-ink text-4xl sm:text-5xl">Every visit earns<br />its way to a free one.</h2>
+        <p class="mt-4 text-ink/65 text-lg">Your 5th groom is on us, and your 10th boarding night is free. Drop in your email or phone to peek at your card.</p>
+        <p class="mt-3 text-sm text-ink/45">Demo preview — a concept for this sample, not a live account lookup.</p>
+        <a href="promotions.html" class="mt-6 inline-flex items-center gap-2 font-heading font-800 text-teal hover:gap-3 transition-all">See full rewards &amp; both cards →</a>
+      </div>
+      <div data-widget="punch">
+        <div class="punch-card p-7" data-active="false">
+          <div class="flex items-center justify-between"><div><p class="font-heading font-900 text-lg">Grooming Rewards</p><p class="text-cream/65 text-sm" data-count>— / 5</p></div><svg viewBox="0 0 24 24" class="w-8 h-8 fill-cream/80"><circle cx="6" cy="10" r="2"/><circle cx="12" cy="8" r="2"/><circle cx="18" cy="10" r="2"/><path d="M12 12c-3 0-5 2-5 4s2 3 5 3 5-1 5-3-2-4-5-4Z"/></svg></div>
+          <div class="punch-perf my-4"></div>
+          <div data-track="grooming">
+            <div class="punch-stamps grid grid-cols-5 gap-3">
+              <span data-slot class="stamp"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="10" r="2"/><circle cx="12" cy="8" r="2"/><circle cx="18" cy="10" r="2"/><path d="M12 12c-3 0-5 2-5 4s2 3 5 3 5-1 5-3-2-4-5-4Z"/></svg></span>
+              <span data-slot class="stamp"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="10" r="2"/><circle cx="12" cy="8" r="2"/><circle cx="18" cy="10" r="2"/><path d="M12 12c-3 0-5 2-5 4s2 3 5 3 5-1 5-3-2-4-5-4Z"/></svg></span>
+              <span data-slot class="stamp"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="10" r="2"/><circle cx="12" cy="8" r="2"/><circle cx="18" cy="10" r="2"/><path d="M12 12c-3 0-5 2-5 4s2 3 5 3 5-1 5-3-2-4-5-4Z"/></svg></span>
+              <span data-slot class="stamp"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="10" r="2"/><circle cx="12" cy="8" r="2"/><circle cx="18" cy="10" r="2"/><path d="M12 12c-3 0-5 2-5 4s2 3 5 3 5-1 5-3-2-4-5-4Z"/></svg></span>
+              <span data-slot class="stamp is-reward"><span class="text-[10px] font-heading font-900">FREE</span></span>
+            </div>
+            <p data-reward class="mt-3 text-sm text-cream/85">One more groom unlocks your free 5th!</p>
+          </div>
+          <div class="punch-locked mt-5">
+            <label class="block text-sm text-cream/85 mb-1.5" for="punchHome">Email or phone</label>
+            <div class="flex gap-2"><input data-punch-input id="punchHome" type="text" placeholder="you@email.com" class="flex-1 rounded-xl px-3.5 py-2.5 text-ink bg-cream placeholder-ink/40 outline-none"/><button data-punch-go class="btn btn--amber !py-2.5">View</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== KENNELBOOKER APP ===================== -->
+  <section class="py-20 sm:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="rounded-[2rem] bg-gradient-to-br from-teal via-teal2 to-teal text-cream overflow-hidden shadow-lg relative">
+        <div class="grid lg:grid-cols-2 gap-8 items-center p-8 sm:p-14">
+          <div data-anim="up">
+            <p class="font-heading font-800 text-peach text-sm tracking-[0.2em] uppercase">Manage it from your phone</p>
+            <h2 class="mt-2 font-heading display text-3xl sm:text-4xl">The KennelBooker<br />Pet Parent app.</h2>
+            <p class="mt-4 text-cream/85 text-lg">Book stays, see reservations, and manage your pet's details from your pocket. Download the app and use our business code to get started.</p>
+            <div class="mt-5 inline-flex items-center gap-3 bg-white/15 rounded-2xl px-5 py-3"><span class="text-cream/75 text-sm font-semibold">Business code</span><span class="font-heading font-900 text-2xl tracking-[0.3em] text-peach">AHCPR</span></div>
+            <div class="mt-6 flex flex-wrap gap-3"><a href="https://apps.apple.com/" target="_blank" rel="noopener" class="btn btn--ink"> App Store</a><a href="https://play.google.com/store" target="_blank" rel="noopener" class="btn btn--ink">▶ Google Play</a></div>
+          </div>
+          <div class="relative grid place-items-center" data-anim="up">
+            <div class="w-52 h-[24rem] rounded-[2.4rem] bg-ink p-3 shadow-2xl rotate-[-6deg]">
+              <div class="w-full h-full rounded-[1.9rem] bg-cream text-ink p-4 flex flex-col">
+                <div class="h-1.5 w-12 bg-ink/20 rounded-full mx-auto"></div>
+                <p class="mt-4 font-heading font-900 text-teal text-lg leading-tight">Welcome back!</p><p class="text-xs text-ink/60 mt-0.5">Bailey's next stay</p>
+                <div class="mt-3 rounded-xl bg-white p-3 text-xs shadow-sm"><p class="font-heading font-800 text-ink">Boarding · 3 nights</p><p class="text-ink/60 mt-0.5">Check-in Fri · 8:00am</p></div>
+                <div class="mt-auto rounded-xl bg-amber2 text-ink text-center font-heading font-800 text-sm py-2.5">Book a Stay</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TEAM ===================== -->
+  <section class="py-20 sm:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-wrap items-end justify-between gap-4" data-anim="up">
+        <div class="max-w-2xl"><p class="font-heading font-800 text-teal text-sm tracking-[0.2em] uppercase">The people behind the counter</p><h2 class="mt-2 font-heading display text-ink text-4xl sm:text-5xl">Locally owned,<br />family run.</h2></div>
+        <a href="about.html" class="font-heading font-800 text-teal hover:gap-3 inline-flex items-center gap-2 transition-all">Meet the whole team →</a>
+      </div>
+      <div class="mt-10 grid sm:grid-cols-2 gap-5" data-anim="cards">
+        <article class="card-lift card overflow-hidden flex"><img src="img/Theresa.png" alt="Theresa, owner" class="w-36 sm:w-44 object-cover flex-none"/><div class="p-6"><h3 class="font-heading font-800 text-ink text-xl">Theresa</h3><p class="text-teal text-sm font-bold">Owner</p><p class="mt-2 text-ink/65 text-sm">Bought the store in 2020 after years on the team. Loves time with her grandkids, sewing &amp; puzzles.</p></div></article>
+        <article class="card-lift card overflow-hidden flex"><img src="img/Dr. Scott.png" alt="Dr. Scott Kuecker" class="w-36 sm:w-44 object-cover object-top flex-none"/><div class="p-6"><h3 class="font-heading font-800 text-ink text-xl">Dr. Scott Kuecker</h3><p class="text-teal text-sm font-bold">Staff Veterinarian</p><p class="mt-2 text-ink/65 text-sm">University of Minnesota grad (1992) with a large-animal focus, caring for area herds for decades.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 pb-20">
+      <div class="rounded-[2rem] bg-gradient-to-br from-amber2 to-amber text-ink p-10 sm:p-16 text-center relative overflow-hidden dotgrid">
+        <div class="relative" data-anim="up">
+          <h2 class="font-heading display text-4xl sm:text-5xl">Everything your animals<br />need, in one stop.</h2>
+          <p class="mt-4 text-ink/75 text-lg max-w-xl mx-auto">Stop in, book the Pet Resort, or give us a call — we'd love to meet you and your animals.</p>
+          <div class="mt-8 flex flex-wrap gap-3 justify-center"><a data-book class="btn btn--ink">Book the Pet Resort →</a><a href="tel:+15075325000" class="btn btn--ghost">Call (507) 532-5000</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-ink text-cream/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <div><img src="img/logo.png" alt="Animal Health Center &amp; Pet Resort" class="h-16 w-auto brightness-0 invert" /></div>
+        <p class="mt-4 text-sm">Southwest Minnesota's one-stop shop for pets and livestock — big animals &amp; small. Locally owned in Marshall, MN.</p>
+        <a href="https://www.facebook.com/animalhealthcentermn/" target="_blank" rel="noopener" aria-label="Facebook" class="mt-4 inline-grid place-items-center w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"><svg viewBox="0 0 24 24" class="w-5 h-5 fill-cream"><path d="M13 22v-8h3l.5-3.5H13V8.3c0-1 .3-1.7 1.8-1.7H17V3.4A26 26 0 0 0 14.6 3C12 3 10 4.6 10 7.7v2.8H7V14h3v8Z"/></svg></a>
+      </div>
+      <div><h4 class="font-heading font-800 text-cream">Explore</h4><ul class="mt-3 space-y-2 text-sm"><li><a href="services.html" class="hover:text-amber2 transition-colors">Our Services</a></li><li><a href="resort.html" class="hover:text-amber2 transition-colors">Pet Resort</a></li><li><a href="shop.html" class="hover:text-amber2 transition-colors">Shop by Animal</a></li><li><a href="promotions.html" class="hover:text-amber2 transition-colors">Promotions &amp; Rewards</a></li><li><a href="about.html" class="hover:text-amber2 transition-colors">About &amp; Contact</a></li></ul></div>
+      <div><h4 class="font-heading font-800 text-cream">Hours</h4><ul class="mt-3 space-y-1.5 text-sm"><li class="flex justify-between gap-4"><span>Mon – Fri</span><span class="text-cream">8:00am – 5:30pm</span></li><li class="flex justify-between gap-4"><span>Saturday</span><span class="text-cream">8:00am – 12:00pm</span></li><li class="flex justify-between gap-4"><span>Sunday</span><span class="text-cream/50">Closed</span></li></ul><span data-hours-badge class="hours-badge is-closed mt-3">Checking hours…</span></div>
+      <div><h4 class="font-heading font-800 text-cream">Visit / Call</h4><p class="mt-3 text-sm">1300 N. Hwy 59<br />Marshall, MN 56258</p><a href="tel:+15075325000" class="mt-2 inline-block font-heading font-800 text-cream text-lg hover:text-amber2 transition-colors">(507) 532-5000</a><a data-book class="mt-4 btn btn--amber !py-2.5 !px-4 !text-sm">Book the Pet Resort →</a></div>
+    </div>
+    <div class="border-t border-white/10"><div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-wrap items-center justify-between gap-2 text-xs text-cream/50"><p>© <span data-year>2026</span> Animal Health Center &amp; Pet Resort. All rights reserved.</p><p>For animals big &amp; small.</p></div></div>
+  </footer>
+
+  <!-- ===================== STICKY BOOK BAR ===================== -->
+  <div data-booknow-bar class="booknow-bar">
+    <div class="bg-ink text-cream md:rounded-2xl md:shadow-2xl">
+      <div class="max-w-7xl md:max-w-none mx-auto px-4 py-3 flex items-center justify-between gap-3 md:gap-6">
+        <span class="hidden sm:block font-heading font-800 text-sm">Ready when you are.</span>
+        <div class="flex items-center gap-2.5 ml-auto"><a data-book class="btn btn--amber !py-2.5 !px-4 !text-sm">Book a Stay</a><a href="tel:+15075325000" class="btn !py-2.5 !px-4 !text-sm bg-white/10 text-cream">Call Us</a></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/widgets.js" defer></script>
+  <script src="js/animations.js" defer></script>
+</body>
+</html>

@@ -43,42 +43,38 @@
   </div>
 
   <!-- ===== NAV ===== -->
-  <header data-site-header class="sticky top-0 z-40 bg-cream/70 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
-      <a href="index.html" class="flex items-center" aria-label="Animal Health Center home"><img src="img/logo.png" alt="Animal Health Center &amp; Pet Resort" class="h-16 w-auto" /></a>
-      <nav class="hidden lg:flex items-center gap-7 text-[15px] font-bold text-ink/70" aria-label="Primary">
-        <a data-nav="services" href="services.html" class="hover:text-teal transition-colors">Services</a>
-        <a data-nav="resort" href="resort.html" class="hover:text-teal transition-colors">Pet Resort</a>
-        <a data-nav="shop" href="shop.html" class="hover:text-teal transition-colors">Shop by Animal</a>
-        <a data-nav="promotions" href="promotions.html" class="hover:text-teal transition-colors">Promotions</a>
-        <a data-nav="about" href="about.html" class="hover:text-teal transition-colors">About</a>
+  <div class="h-[86px]" aria-hidden="true"></div>
+
+  <header data-site-header class="fixed left-1/2 -translate-x-1/2 z-40 w-[min(calc(100%-24px),1180px)] top-[50px]">
+    <div class="relative flex items-center justify-between gap-4 min-h-[64px] px-3 py-2 rounded-3xl bg-cream/30 backdrop-blur-md shadow-[0_20px_60px_-24px_rgba(60,40,16,.45)] ring-1 ring-ink/10">
+      <a href="index.html" class="flex items-center pl-1" aria-label="Animal Health Center home"><img src="img/logo.png" alt="Animal Health Center &amp; Pet Resort" class="h-12 w-auto" /></a>
+      <nav class="hidden lg:flex items-center gap-1 text-[15px] font-bold text-ink/70" aria-label="Primary">
+        <a data-nav="about" href="about.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">About Us</a>
+        <a data-nav="resort" href="resort.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">Pet Resort</a>
+        <a data-nav="shop" href="shop.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">Shop</a>
+        <a data-nav="livestock" href="livestock.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">Livestock</a>
+        <a data-nav="small-animal" href="small-animal.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">Small Animal</a>
+        <a data-nav="grooming" href="grooming.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">Grooming</a>
       </nav>
       <div class="flex items-center gap-2">
         <a data-book class="hidden sm:inline-flex btn btn--amber !py-2.5 !px-4 !text-sm">Book a Stay</a>
-        <button data-menu-toggle class="lg:hidden grid place-items-center w-11 h-11 rounded-xl bg-white shadow-sm text-ink" aria-label="Open menu" aria-expanded="false">
+        <button data-menu-toggle class="lg:hidden grid place-items-center w-11 h-11 rounded-2xl bg-white shadow-sm text-ink" aria-label="Open menu" aria-controls="navDropdown" aria-expanded="false">
           <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
         </button>
       </div>
+
+      <!-- Mobile dropdown -->
+      <nav data-menu-drawer id="navDropdown" class="nav-dropdown lg:hidden absolute top-[calc(100%+10px)] right-0 w-[min(320px,calc(100vw-24px))] grid gap-1 p-3 rounded-3xl bg-cream/97 backdrop-blur-md shadow-[0_20px_60px_-20px_rgba(60,40,16,.5)] ring-1 ring-ink/10 text-base font-heading font-800 text-ink/80" aria-label="Mobile">
+        <a data-nav="about" href="about.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">About Us</a>
+        <a data-nav="resort" href="resort.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">Pet Resort</a>
+        <a data-nav="shop" href="shop.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">Shop</a>
+        <a data-nav="livestock" href="livestock.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">Livestock</a>
+        <a data-nav="small-animal" href="small-animal.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">Small Animal</a>
+        <a data-nav="grooming" href="grooming.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">Grooming</a>
+        <a data-book class="btn btn--amber justify-center mt-2">Book the Pet Resort →</a>
+      </nav>
     </div>
   </header>
-
-  <!-- Mobile drawer -->
-  <div data-menu-drawer class="nav-drawer lg:hidden fixed inset-0 z-50 bg-cream text-ink p-6 flex flex-col">
-    <div class="flex items-center justify-between">
-      <span class="font-heading font-900 text-lg">Menu</span>
-      <button data-menu-close class="grid place-items-center w-11 h-11 rounded-xl bg-white shadow-sm" aria-label="Close menu">
-        <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"/></svg>
-      </button>
-    </div>
-    <nav class="mt-8 flex flex-col gap-1 text-2xl font-heading font-800" aria-label="Mobile">
-      <a href="services.html" class="py-3 border-b border-ink/10">Services</a>
-      <a href="resort.html" class="py-3 border-b border-ink/10">Pet Resort</a>
-      <a href="shop.html" class="py-3 border-b border-ink/10">Shop by Animal</a>
-      <a href="promotions.html" class="py-3 border-b border-ink/10">Promotions</a>
-      <a href="about.html" class="py-3 border-b border-ink/10">About &amp; Contact</a>
-    </nav>
-    <a data-book class="mt-auto btn btn--amber justify-center">Book the Pet Resort →</a>
-  </div>
 
   <main>
 
@@ -108,6 +104,13 @@
         <div data-hero-line class="mt-9 flex items-center gap-6 text-ink/60 text-sm">
           <span class="flex items-center gap-2"><span class="font-heading font-900 text-ink text-xl">$12</span> half-day daycare</span>
           <span class="hidden sm:flex items-center gap-2"><span class="font-heading font-900 text-ink text-xl">$20</span> Kitty Korral / day</span>
+        </div>
+        <div data-hero-line class="mt-6 flex flex-wrap gap-2.5">
+          <a href="#daycare" class="chip-link">Daycare</a>
+          <a href="#boarding" class="chip-link">Boarding</a>
+          <a href="#kitty-korral" class="chip-link">Kitty Korral</a>
+          <a href="#rates" class="chip-link">Rates</a>
+          <a href="#rewards" class="chip-link">Rewards</a>
         </div>
       </div>
 
@@ -139,26 +142,228 @@
           <img src="img/Large Dog Daycare Room.jpg" alt="Doggy daycare play room" class="h-48 w-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=600&q=70'"/>
           <div class="p-6">
             <h3 class="font-heading font-900 text-ink text-xl">Doggy Daycare</h3>
-            <p class="text-ink/60 text-sm mt-1">Supervised play in two indoor rooms split by size.</p>
-            <p class="mt-3 font-heading font-900 text-teal text-2xl">$12 <span class="text-ink/45 text-sm font-body font-normal">half day</span></p>
+            <p class="text-ink/60 text-sm mt-1">Two play rooms split by size — under 40lbs &amp; over 40lbs.</p>
+            <p class="mt-3 font-heading font-900 text-teal text-2xl">$12 <span class="text-ink/45 text-sm font-body font-normal">half day · $22 full day</span></p>
+            <a href="#daycare" class="mt-3 inline-block text-teal font-bold text-sm hover:underline">See rooms &amp; hours →</a>
           </div>
         </article>
         <article class="card-lift card overflow-hidden">
           <img src="img/DOG BOARDING SERVICES.jpg" alt="Dog boarding suite" class="h-48 w-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=70'"/>
           <div class="p-6">
             <h3 class="font-heading font-900 text-ink text-xl">Dog Boarding</h3>
-            <p class="text-ink/60 text-sm mt-1">Cozy overnight suites with daily care &amp; play.</p>
-            <p class="mt-3 font-heading font-900 text-teal text-2xl">Book <span class="text-ink/45 text-sm font-body font-normal">online</span></p>
+            <p class="text-ink/60 text-sm mt-1">16 kennels (large/medium/small) + 2 family suites.</p>
+            <p class="mt-3 font-heading font-900 text-teal text-2xl">$20 <span class="text-ink/45 text-sm font-body font-normal">first dog / night</span></p>
+            <a href="#boarding" class="mt-3 inline-block text-teal font-bold text-sm hover:underline">See rates &amp; policy →</a>
           </div>
         </article>
         <article class="card-lift card overflow-hidden">
           <img src="img/CAT BOARDING SERVICES2.jpg" alt="The Kitty Korral cat boarding" class="h-48 w-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=600&q=70'"/>
           <div class="p-6">
             <h3 class="font-heading font-900 text-ink text-xl">Kitty Korral</h3>
-            <p class="text-ink/60 text-sm mt-1">A quiet, separate space just for cats.</p>
-            <p class="mt-3 font-heading font-900 text-teal text-2xl">$20 <span class="text-ink/45 text-sm font-body font-normal">/ day</span></p>
+            <p class="text-ink/60 text-sm mt-1">A quiet, separate boarding space just for cats.</p>
+            <p class="mt-3 font-heading font-900 text-teal text-2xl">$20 <span class="text-ink/45 text-sm font-body font-normal">first cat / day</span></p>
+            <a href="#kitty-korral" class="mt-3 inline-block text-teal font-bold text-sm hover:underline">See rates &amp; care →</a>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="paw-divider" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="10" r="2"/><circle cx="12" cy="8" r="2"/><circle cx="18" cy="10" r="2"/><path d="M12 12c-3 0-5 2-5 4s2 3 5 3 5-1 5-3-2-4-5-4Z"/></svg></div>
+
+  <!-- ===================== DOGGY DAYCARE (detail) ===================== -->
+  <section id="daycare" class="py-20 sm:py-28 bg-white relative overflow-hidden scroll-mt-24">
+    <div class="soft-glow bg-teal2/15 w-[26rem] h-[26rem] -left-20 top-10"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="lg:order-2 relative" data-anim="up">
+        <img src="img/Large Dog Daycare Room.jpg" alt="Large dog daycare play room" class="rounded-[26px] shadow-lg w-full object-cover aspect-[4/3]" onerror="this.src='https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=900&q=70'"/>
+      </div>
+      <div class="lg:order-1" data-anim="up">
+        <span class="service-kicker bg-teal/10 text-teal">Doggy Daycare</span>
+        <h2 class="mt-3 font-heading display text-ink text-4xl sm:text-5xl">A whole day<br />of zoomies.</h2>
+        <p class="mt-4 text-ink/65 text-lg">Two indoor play rooms — split by size so the little dogs and the big dogs each get room to run. Supervised play, naps, and a tired, happy pup at pickup.</p>
+
+        <div class="mt-7 grid sm:grid-cols-2 gap-4">
+          <div class="card p-5 bg-cream">
+            <h3 class="font-heading font-900 text-ink">Small dogs <span class="text-ink/45 font-body font-normal text-sm">under 40lbs</span></h3>
+            <ul class="mt-2 space-y-1.5 text-sm text-ink/65">
+              <li>Risers &amp; platforms at the windows</li>
+              <li>Toys scaled for smaller breeds</li>
+              <li>Climate-controlled, safe &amp; enclosed</li>
+            </ul>
+          </div>
+          <div class="card p-5 bg-cream">
+            <h3 class="font-heading font-900 text-ink">Large dogs <span class="text-ink/45 font-body font-normal text-sm">over 40lbs</span></h3>
+            <ul class="mt-2 space-y-1.5 text-sm text-ink/65">
+              <li>Steps &amp; deck with window views</li>
+              <li>Toys sized for bigger breeds</li>
+              <li>Climate-controlled, spacious play area</li>
+            </ul>
+          </div>
+        </div>
+
+        <div data-widget="pricing" class="mt-7 card p-6 bg-cream max-w-md">
+          <div class="flex gap-2 p-1 bg-white rounded-2xl shadow-sm w-max">
+            <button data-plan="half" class="plan-btn" aria-pressed="true">Half day</button>
+            <button data-plan="full" class="plan-btn" aria-pressed="false">Full day</button>
+          </div>
+          <div class="mt-5 flex items-end gap-3">
+            <span data-price class="font-heading display text-5xl text-teal">$12</span>
+            <span data-price-sub class="text-ink/55 mb-1.5">Half day · under 5 hours</span>
+          </div>
+          <p class="mt-3 text-sm text-ink/45">Weekly-stay discount available — ask us in store.</p>
+        </div>
+
+        <p class="mt-6 text-ink/65"><strong class="text-ink">Hours:</strong> Monday–Friday, 8:00am–5:00pm.</p>
+
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a data-book class="btn btn--amber">Reserve a daycare day →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="paw-divider" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="10" r="2"/><circle cx="12" cy="8" r="2"/><circle cx="18" cy="10" r="2"/><path d="M12 12c-3 0-5 2-5 4s2 3 5 3 5-1 5-3-2-4-5-4Z"/></svg></div>
+
+  <!-- ===================== DOG BOARDING (detail) ===================== -->
+  <section id="boarding" class="py-20 sm:py-28 relative overflow-hidden scroll-mt-24">
+    <div data-blob class="blob blob--teal w-[24rem] h-[24rem] -left-24 top-10"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div data-anim="up">
+        <span class="service-kicker bg-teal/10 text-teal">Dog Boarding</span>
+        <h2 class="mt-3 font-heading display text-ink text-4xl sm:text-5xl">Cozy suites,<br />daily care.</h2>
+        <p class="mt-4 text-ink/65 text-lg">6 large, 6 medium &amp; 4 small kennels, plus 2 extra-large family suites for dogs who'd rather bunk together. First-timers start with a meet-and-greet so everyone's comfortable.</p>
+        <ul class="mt-6 grid sm:grid-cols-2 gap-3">
+          <li class="feature-li">6 large kennels</li>
+          <li class="feature-li">6 medium kennels</li>
+          <li class="feature-li">4 small kennels</li>
+          <li class="feature-li">2 family suites (extra-large)</li>
+        </ul>
+        <div class="mt-7 card p-6 bg-cream max-w-md">
+          <h3 class="font-heading font-900 text-ink">Boarding rates</h3>
+          <ul class="mt-3 space-y-2 text-sm text-ink/70">
+            <li class="flex justify-between gap-4"><span>First dog</span><span class="font-heading font-800 text-ink">$20 / night</span></li>
+            <li class="flex justify-between gap-4"><span>Additional dog</span><span class="font-heading font-800 text-ink">$17 / night</span></li>
+            <li class="flex justify-between gap-4"><span>Short stay (1–2 nights)</span><span class="font-heading font-800 text-ink">$15–$10</span></li>
+            <li class="flex justify-between gap-4"><span>Extended stay (10+ nights)</span><span class="font-heading font-800 text-ink">Discounted</span></li>
+          </ul>
+        </div>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a data-book class="btn btn--amber">Book a boarding stay →</a>
+        </div>
+      </div>
+      <div class="relative" data-anim="up">
+        <img src="img/DOG BOARDING SERVICES.jpg" alt="Dog boarding suite" class="rounded-[26px] shadow-lg w-full object-cover aspect-[4/3]" onerror="this.src='https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=70'"/>
+      </div>
+    </div>
+  </section>
+
+  <div class="paw-divider" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="10" r="2"/><circle cx="12" cy="8" r="2"/><circle cx="18" cy="10" r="2"/><path d="M12 12c-3 0-5 2-5 4s2 3 5 3 5-1 5-3-2-4-5-4Z"/></svg></div>
+
+  <!-- ===================== KITTY KORRAL (detail) ===================== -->
+  <section id="kitty-korral" class="py-20 sm:py-28 bg-white relative overflow-hidden scroll-mt-24">
+    <div class="soft-glow bg-amber2/15 w-[24rem] h-[24rem] right-[-6rem] top-10"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="lg:order-2 relative" data-anim="up">
+        <img src="img/CAT BOARDING SERVICES2.jpg" alt="The Kitty Korral cat boarding" class="rounded-[26px] shadow-lg w-full object-cover aspect-[4/3]" onerror="this.src='https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=900&q=70'"/>
+      </div>
+      <div class="lg:order-1" data-anim="up">
+        <span class="service-kicker bg-amber2/15 text-amber">Kitty Korral</span>
+        <h2 class="mt-3 font-heading display text-ink text-4xl sm:text-5xl">A quiet wing,<br />just for cats.</h2>
+        <p class="mt-4 text-ink/65 text-lg">Separate from the dog kennels, so cats get a calm space of their own — daily care, fresh litter &amp; a window view.</p>
+        <div class="mt-7 card p-6 bg-cream max-w-md">
+          <h3 class="font-heading font-900 text-ink">Kitty Korral rates</h3>
+          <ul class="mt-3 space-y-2 text-sm text-ink/70">
+            <li class="flex justify-between gap-4"><span>First cat</span><span class="font-heading font-800 text-ink">$20 / day</span></li>
+            <li class="flex justify-between gap-4"><span>Additional cat</span><span class="font-heading font-800 text-ink">$17 / day</span></li>
+            <li class="flex justify-between gap-4"><span>Extended stay</span><span class="font-heading font-800 text-ink">Discounted</span></li>
+          </ul>
+          <p class="mt-3 text-xs text-ink/45">Charged by day, not by night.</p>
+        </div>
+        <p class="mt-6 text-ink/65"><strong class="text-ink">Vaccinations needed:</strong> rabies, distemper, and feline leukemia (or a negative test).</p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a data-book class="btn btn--amber">Book the Kitty Korral →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RATES ESTIMATOR ===================== -->
+  <section id="rates" class="py-20 sm:py-28 relative overflow-hidden scroll-mt-24">
+    <div data-blob class="blob blob--peach w-[22rem] h-[22rem] -left-20 top-10"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl mx-auto text-center" data-anim="up">
+        <p class="font-heading font-800 text-teal text-sm tracking-[0.2em] uppercase">What will it cost?</p>
+        <h2 class="mt-2 font-heading display text-ink text-4xl sm:text-5xl">Quick rate<br />estimator.</h2>
+        <p class="mt-4 text-ink/65 text-lg">Pick a service, how many pets, and how many days — we'll estimate the total.</p>
+      </div>
+
+      <div data-widget="rate-estimator" class="mt-10 max-w-2xl mx-auto card p-7 sm:p-8 bg-white" data-anim="up">
+        <div class="grid sm:grid-cols-3 gap-4">
+          <label class="block">
+            <span class="text-sm font-bold text-ink/70">Service</span>
+            <select id="rateService" class="mt-1.5 w-full rounded-xl border border-ink/15 bg-cream px-3 py-2.5 text-ink font-semibold">
+              <option value="boarding">Dog boarding ($20/$17)</option>
+              <option value="kitty">Kitty Korral ($20/$17)</option>
+              <option value="full">Full-day daycare ($22)</option>
+              <option value="half">Half-day daycare ($12)</option>
+            </select>
+          </label>
+          <label class="block">
+            <span class="text-sm font-bold text-ink/70">Days</span>
+            <input id="rateDays" type="number" min="1" value="1" class="mt-1.5 w-full rounded-xl border border-ink/15 bg-cream px-3 py-2.5 text-ink font-semibold"/>
+          </label>
+          <label class="block">
+            <span class="text-sm font-bold text-ink/70">Pets</span>
+            <input id="ratePets" type="number" min="1" value="1" class="mt-1.5 w-full rounded-xl border border-ink/15 bg-cream px-3 py-2.5 text-ink font-semibold"/>
+          </label>
+        </div>
+        <div class="mt-6 flex items-end justify-between gap-4 flex-wrap border-t border-ink/10 pt-6">
+          <span class="text-ink/60">Estimated total</span>
+          <output id="rateTotal" class="font-heading display text-4xl text-teal">$20</output>
+        </div>
+        <p class="mt-3 text-xs text-ink/45">Estimate only — additional pets are discounted per the rates above. Daycare rates don't change with day count beyond the per-day price. Call us to confirm exact pricing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== REWARDS ===================== -->
+  <section id="rewards" class="py-20 sm:py-28 bg-white relative overflow-hidden scroll-mt-24">
+    <div class="soft-glow bg-amber2/20 w-[24rem] h-[24rem] right-[-6rem] top-10"></div>
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl mx-auto text-center" data-anim="up">
+        <p class="font-heading font-800 text-amber text-sm tracking-[0.2em] uppercase">Stay loyal, stay rewarded</p>
+        <h2 class="mt-2 font-heading display text-ink text-4xl sm:text-5xl">Your boarding<br />punch card.</h2>
+        <p class="mt-4 text-ink/65 text-lg">Every paid stay earns a stamp. Fill the card and the next stay's on us.</p>
+      </div>
+
+      <div data-widget="punch" class="mt-10 max-w-xl mx-auto card p-7 sm:p-8 bg-cream relative" data-anim="up">
+        <div class="punch-locked">
+          <p class="text-sm font-bold text-ink/70 mb-3">Enter your name or phone to view your card</p>
+          <div class="flex gap-2">
+            <input data-punch-input type="text" placeholder="Name or phone" class="flex-1 rounded-xl border border-ink/15 bg-white px-3 py-2.5 text-ink"/>
+            <button data-punch-go class="btn btn--teal !px-5">Go</button>
+          </div>
+        </div>
+        <div class="punch-card" data-active="false" data-track="boarding">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-heading font-900 text-ink text-lg">Boarding Rewards</h3>
+            <span data-count class="text-sm font-bold text-ink/55">0 / 10</span>
+          </div>
+          <div class="grid grid-cols-5 gap-3">
+            <span class="stamp" data-slot="1"></span>
+            <span class="stamp" data-slot="2"></span>
+            <span class="stamp" data-slot="3"></span>
+            <span class="stamp" data-slot="4"></span>
+            <span class="stamp" data-slot="5"></span>
+            <span class="stamp" data-slot="6"></span>
+            <span class="stamp" data-slot="7"></span>
+            <span class="stamp" data-slot="8"></span>
+            <span class="stamp" data-slot="9"></span>
+            <span class="stamp is-reward" data-slot="10"></span>
+          </div>
+          <p data-reward class="mt-4 text-sm text-ink/65">Four more nights unlock your free 10th!</p>
+        </div>
       </div>
     </div>
   </section>
@@ -207,7 +412,7 @@
     </div>
   </section>
 
-  <!-- ===================== ROOM GALLERY ===================== -->
+  <!-- ===================== ROOM GALLERY / FACILITY ===================== -->
   <section class="py-20 sm:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="max-w-2xl mb-10" data-anim="up">
@@ -219,6 +424,37 @@
         <figure class="card-lift card overflow-hidden"><img src="img/Small Dog Daycare Room.jpg" alt="Small dog daycare room" class="aspect-square w-full object-cover"/><figcaption class="px-4 py-3 text-sm font-heading font-800 text-ink">Small-dog room</figcaption></figure>
         <figure class="card-lift card overflow-hidden"><img src="img/DOG BOARDING SERVICES3.jpg" alt="Dog boarding suites" class="aspect-square w-full object-cover"/><figcaption class="px-4 py-3 text-sm font-heading font-800 text-ink">Boarding suites</figcaption></figure>
         <figure class="card-lift card overflow-hidden"><img src="img/CAT BOARDING SERVICES3.png" alt="The Kitty Korral" class="aspect-square w-full object-cover"/><figcaption class="px-4 py-3 text-sm font-heading font-800 text-ink">Kitty Korral</figcaption></figure>
+      </div>
+
+      <div class="mt-14 grid sm:grid-cols-3 gap-6" data-anim="cards">
+        <div class="card p-6 bg-cream">
+          <h3 class="font-heading font-900 text-ink">Dogs need</h3>
+          <ul class="mt-3 space-y-1.5 text-sm text-ink/65">
+            <li>Rabies</li>
+            <li>Distemper / parvo</li>
+            <li>Leptospirosis</li>
+            <li>Bordetella</li>
+            <li>Current flea &amp; tick preventative</li>
+          </ul>
+        </div>
+        <div class="card p-6 bg-cream">
+          <h3 class="font-heading font-900 text-ink">Cats need</h3>
+          <ul class="mt-3 space-y-1.5 text-sm text-ink/65">
+            <li>Rabies</li>
+            <li>Distemper</li>
+            <li>Feline leukemia — or a negative test</li>
+          </ul>
+          <p class="mt-3 text-xs text-ink/45">Bravecto, NexGard, Simparica &amp; Credelio are accepted prescriptions — OTC Frontline is fine too.</p>
+        </div>
+        <div class="card p-6 bg-cream">
+          <h3 class="font-heading font-900 text-ink">Drop-off / pickup</h3>
+          <ul class="mt-3 space-y-1.5 text-sm text-ink/65">
+            <li class="flex justify-between gap-3"><span>Mon–Fri</span><span class="text-ink font-semibold">7:30–4:30</span></li>
+            <li class="flex justify-between gap-3"><span>Saturday</span><span class="text-ink font-semibold">8–11:30 &amp; 5–6</span></li>
+            <li class="flex justify-between gap-3"><span>Sunday</span><span class="text-ink font-semibold">12–1 &amp; 5–6</span></li>
+            <li class="flex justify-between gap-3"><span>Holidays</span><span class="text-ink font-semibold">Pickup only, 5–6</span></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -317,7 +553,7 @@
         <p class="mt-4 text-sm">Southwest Minnesota's one-stop shop for pets and livestock — big animals &amp; small. Locally owned in Marshall, MN.</p>
         <a href="https://www.facebook.com/animalhealthcentermn/" target="_blank" rel="noopener" aria-label="Facebook" class="mt-4 inline-grid place-items-center w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"><svg viewBox="0 0 24 24" class="w-5 h-5 fill-cream"><path d="M13 22v-8h3l.5-3.5H13V8.3c0-1 .3-1.7 1.8-1.7H17V3.4A26 26 0 0 0 14.6 3C12 3 10 4.6 10 7.7v2.8H7V14h3v8Z"/></svg></a>
       </div>
-      <div><h4 class="font-heading font-800 text-cream">Explore</h4><ul class="mt-3 space-y-2 text-sm"><li><a href="services.html" class="hover:text-amber2 transition-colors">Our Services</a></li><li><a href="resort.html" class="hover:text-amber2 transition-colors">Pet Resort</a></li><li><a href="shop.html" class="hover:text-amber2 transition-colors">Shop by Animal</a></li><li><a href="promotions.html" class="hover:text-amber2 transition-colors">Promotions &amp; Rewards</a></li><li><a href="about.html" class="hover:text-amber2 transition-colors">About &amp; Contact</a></li></ul></div>
+      <div><h4 class="font-heading font-800 text-cream">Explore</h4><ul class="mt-3 space-y-2 text-sm"><li><a href="about.html" class="hover:text-amber2 transition-colors">About Us</a></li><li><a href="resort.html" class="hover:text-amber2 transition-colors">Pet Resort</a></li><li><a href="grooming.html" class="hover:text-amber2 transition-colors">Grooming</a></li><li><a href="livestock.html" class="hover:text-amber2 transition-colors">Livestock</a></li><li><a href="small-animal.html" class="hover:text-amber2 transition-colors">Small Animal</a></li></ul></div>
       <div><h4 class="font-heading font-800 text-cream">Hours</h4><ul class="mt-3 space-y-1.5 text-sm"><li class="flex justify-between gap-4"><span>Mon – Fri</span><span class="text-cream">8:00am – 5:30pm</span></li><li class="flex justify-between gap-4"><span>Saturday</span><span class="text-cream">8:00am – 12:00pm</span></li><li class="flex justify-between gap-4"><span>Sunday</span><span class="text-cream/50">Closed</span></li></ul><span data-hours-badge class="hours-badge is-closed mt-3">Checking hours…</span></div>
       <div><h4 class="font-heading font-800 text-cream">Visit / Call</h4><p class="mt-3 text-sm">1300 N. Hwy 59<br />Marshall, MN 56258</p><a href="tel:+15075325000" class="mt-2 inline-block font-heading font-800 text-cream text-lg hover:text-amber2 transition-colors">(507) 532-5000</a><a data-book class="mt-4 btn btn--amber !py-2.5 !px-4 !text-sm">Book the Pet Resort →</a></div>
     </div>

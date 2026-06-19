@@ -259,6 +259,41 @@
   }
 
   /* ======================================================================
+     5b. RATE ESTIMATOR  (resort.html)
+     Per-night/day rate, first pet full price, additional pets at the
+     discounted rate. Daycare rates are flat per pet (no per-night discount).
+     ====================================================================== */
+  function initRateEstimator(root) {
+    var serviceEl = $("#rateService", root);
+    var daysEl = $("#rateDays", root);
+    var petsEl = $("#ratePets", root);
+    var totalEl = $("#rateTotal", root);
+    if (!serviceEl || !daysEl || !petsEl || !totalEl) return;
+
+    var RATES = {
+      boarding: { first: 20, extra: 17, perDay: true },
+      kitty:    { first: 20, extra: 17, perDay: true },
+      full:     { first: 22, extra: 22, perDay: true },
+      half:     { first: 12, extra: 12, perDay: true }
+    };
+
+    function calc() {
+      var rate = RATES[serviceEl.value] || RATES.boarding;
+      var days = Math.max(1, parseInt(daysEl.value, 10) || 1);
+      var pets = Math.max(1, parseInt(petsEl.value, 10) || 1);
+      var perDayTotal = rate.first + (pets - 1) * rate.extra;
+      var total = perDayTotal * days;
+      totalEl.textContent = "$" + total.toLocaleString();
+    }
+
+    [serviceEl, daysEl, petsEl].forEach(function (el) {
+      el.addEventListener("input", calc);
+      el.addEventListener("change", calc);
+    });
+    calc();
+  }
+
+  /* ======================================================================
      6. WEEKLY PROMOTIONS — auto-highlight TODAY  (promotions.html + home)
      ====================================================================== */
   function initWeeklyPromos(root) {
@@ -375,6 +410,14 @@
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
   }
 
+  function initStickyHeader() {
+    var header = $("[data-site-header]");
+    if (!header) return;
+    function apply() { header.classList.toggle("is-stuck", window.scrollY > 18); }
+    window.addEventListener("scroll", apply, { passive: true });
+    apply();
+  }
+
   function initStickyBookBar() {
     var bar = $("[data-booknow-bar]");
     if (!bar) return;
@@ -417,12 +460,14 @@
     $$('[data-widget="ready"]').forEach(initReadyCheck);
     $$('[data-widget="punch"]').forEach(initPunchCard);
     $$('[data-widget="pricing"]').forEach(initPricingToggle);
+    $$('[data-widget="rate-estimator"]').forEach(initRateEstimator);
     $$('[data-widget="promos"]').forEach(initWeeklyPromos);
     $$('[data-widget="contact"]').forEach(initContactForm);
     initCountUps();
 
     setActiveNav();
     initMobileMenu();
+    initStickyHeader();
     initStickyBookBar();
     wireBookingLinks();
     initFooterBits();

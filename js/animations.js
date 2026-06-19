@@ -89,12 +89,5 @@
     host.addEventListener("touchend", function () { loop.resume(); }, { passive: true });
   });
 
-  /* ---- sticky header ---- */
-  var header = $("[data-site-header]");
-  if (header) {
-    ScrollTrigger.create({ start: "top -12", onToggle: function (self) { header.classList.toggle("is-stuck", self.isActive); } });
-    header.classList.toggle("is-stuck", window.scrollY > 12);
-  }
-
   window.addEventListener("load", function () { ScrollTrigger.refresh(); });
 })();

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FBF6EC" />
+  <title>Livestock Supply &amp; Large-Animal Vet · Animal Health Center, Marshall MN</title>
+  <meta name="description" content="Equine, cattle, swine, sheep &amp; goat supplies in Marshall, MN — vaccines, wormers, minerals, feed, implants &amp; VFD products, with Dr. Scott Kuecker on staff." />
+  <meta property="og:title" content="Livestock Supply &amp; Vet Care · Animal Health Center &amp; Pet Resort" />
+  <meta property="og:description" content="Livestock supplies &amp; on-staff large-animal vet in Marshall, MN." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { cream:"#FBF6EC", sand:"#EFE3CE", ink:"#20180F", teal:"#1B6B6B", teal2:"#2c9494",
+        amber:"#C17F24", amber2:"#E6A93F", peach:"#F6D9A8", forest:"#3E6B23", rust:"#9c4a1a" },
+      fontFamily: { heading:["Nunito","system-ui","sans-serif"], body:["Inter","system-ui","sans-serif"] }
+    } } };
+  </script>
+  <link rel="stylesheet" href="css/custom.css" />
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🐾&lt;/text&gt;&lt;/svg&gt;" />
+</head>
+
+<body data-page="livestock" class="font-body bg-cream text-ink">
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="bg-ink text-cream/85 text-[13px]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-9 flex items-center justify-between gap-4">
+      <span class="hidden sm:flex items-center gap-2 min-w-0">
+        <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-amber2 flex-none"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>
+        <span class="truncate">1300 N. Hwy 59, Marshall, MN</span>
+      </span>
+      <div class="flex items-center gap-4 ml-auto">
+        <span data-hours-badge class="hours-badge is-closed">Checking hours…</span>
+        <a href="tel:+15075325000" class="font-bold text-cream hover:text-amber2 transition-colors">(507) 532-5000</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NAV ===== -->
+  <div class="h-[86px]" aria-hidden="true"></div>
+
+  <header data-site-header class="fixed left-1/2 -translate-x-1/2 z-40 w-[min(calc(100%-24px),1180px)] top-[50px]">
+    <div class="relative flex items-center justify-between gap-4 min-h-[64px] px-3 py-2 rounded-3xl bg-cream/30 backdrop-blur-md shadow-[0_20px_60px_-24px_rgba(60,40,16,.45)] ring-1 ring-ink/10">
+      <a href="index.html" class="flex items-center pl-1" aria-label="Animal Health Center home"><img src="img/logo.png" alt="Animal Health Center &amp; Pet Resort" class="h-12 w-auto" /></a>
+      <nav class="hidden lg:flex items-center gap-1 text-[15px] font-bold text-ink/70" aria-label="Primary">
+        <a data-nav="about" href="about.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">About Us</a>
+        <a data-nav="resort" href="resort.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">Pet Resort</a>
+        <a data-nav="shop" href="shop.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">Shop</a>
+        <a data-nav="livestock" href="livestock.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">Livestock</a>
+        <a data-nav="small-animal" href="small-animal.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">Small Animal</a>
+        <a data-nav="grooming" href="grooming.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">Grooming</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a data-book class="hidden sm:inline-flex btn btn--amber !py-2.5 !px-4 !text-sm">Book a Stay</a>
+        <button data-menu-toggle class="lg:hidden grid place-items-center w-11 h-11 rounded-2xl bg-white shadow-sm text-ink" aria-label="Open menu" aria-controls="navDropdown" aria-expanded="false">
+          <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <!-- Mobile dropdown -->
+      <nav data-menu-drawer id="navDropdown" class="nav-dropdown lg:hidden absolute top-[calc(100%+10px)] right-0 w-[min(320px,calc(100vw-24px))] grid gap-1 p-3 rounded-3xl bg-cream/97 backdrop-blur-md shadow-[0_20px_60px_-20px_rgba(60,40,16,.5)] ring-1 ring-ink/10 text-base font-heading font-800 text-ink/80" aria-label="Mobile">
+        <a data-nav="about" href="about.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">About Us</a>
+        <a data-nav="resort" href="resort.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">Pet Resort</a>
+        <a data-nav="shop" href="shop.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">Shop</a>
+        <a data-nav="livestock" href="livestock.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">Livestock</a>
+        <a data-nav="small-animal" href="small-animal.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">Small Animal</a>
+        <a data-nav="grooming" href="grooming.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">Grooming</a>
+        <a data-book class="btn btn--amber justify-center mt-2">Book the Pet Resort →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+  <!-- ===================== HERO ===================== -->
+  <section data-booknow-after class="sunrise relative overflow-hidden">
+    <div data-blob class="blob blob--peach w-[28rem] h-[28rem] -left-32 top-0"></div>
+    <div data-blob class="blob blob--teal w-[24rem] h-[24rem] right-[-6rem] top-20"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 pt-14 sm:pt-20 pb-10 text-center">
+      <p data-hero-line class="inline-flex items-center gap-2 text-teal font-bold text-sm bg-white shadow-sm rounded-full px-4 py-2">
+        <span class="w-2 h-2 rounded-full bg-amber2"></span> Equine &amp; farm · in stock
+      </p>
+      <h1 class="mt-6 font-heading display text-ink text-[3rem] leading-[.95] sm:text-6xl xl:text-7xl">
+        <span data-hero-line class="block">Stocked for</span>
+        <span data-hero-line class="block">every <span class="text-teal">head you raise.</span></span>
+      </h1>
+      <p data-hero-line class="mt-5 text-ink/65 text-lg max-w-xl mx-auto">
+        Walk past the pet aisle and the whole back of the store is livestock — name-brand vaccines, wormers, minerals, feed, implants &amp; VFD products, with Dr. Kuecker on staff.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== ANIMAL SELECTOR + PRODUCT CARDS ===================== -->
+  <section class="pb-20 sm:pb-28 -mt-2 relative" data-pet-scope>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+      <div data-widget="profile" data-default="horse" class="grid grid-cols-2 gap-5 max-w-xl">
+        <button data-pet-tile="horse" class="pet-tile group text-center card overflow-hidden relative">
+          <div class="relative bg-gradient-to-b from-teal/15 to-cream h-44 overflow-hidden flex items-end justify-center">
+            <img src="img/transparent/different horses.png" alt="Various horse breeds" class="w-full h-full object-contain object-bottom scale-110 group-hover:scale-[1.15] transition-transform duration-500"/>
+          </div>
+          <span class="flex items-center justify-center px-5 py-4 bg-cream border-t border-ink/8"><span class="font-heading font-900 text-ink text-lg">Equine</span></span>
+        </button>
+        <button data-pet-tile="farm" class="pet-tile group text-center card overflow-hidden relative">
+          <div class="relative bg-gradient-to-b from-amber/20 to-cream h-44 overflow-hidden flex items-end justify-center">
+            <img src="img/transparent/farm animals.png" alt="Farm animals" class="w-full h-full object-contain object-bottom scale-110 group-hover:scale-[1.15] transition-transform duration-500"/>
+          </div>
+          <span class="flex items-center justify-center px-5 py-4 bg-cream border-t border-ink/8"><span class="font-heading font-900 text-ink text-lg">Farm</span></span>
+        </button>
+      </div>
+
+      <div class="mt-12 flex items-end justify-between gap-4 flex-wrap">
+        <h2 class="font-heading display text-ink text-3xl sm:text-4xl">In stock for <span data-pet-label class="text-teal">Equine</span></h2>
+        <a data-book class="btn btn--amber !py-2.5 !px-4 !text-sm">Book a Stay</a>
+      </div>
+
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- HORSE -->
+        <article data-pet="horse" class="card-lift card overflow-hidden">
+          <div class="aisle-band aisle-band--amber">Animal Health</div>
+          <div class="p-5"><h3 class="font-heading font-900 text-ink text-lg">Equine vaccines &amp; wormers</h3><p class="text-ink/60 text-sm mt-1">Core vaccines, dewormers &amp; the seasonal health products your horses need.</p></div>
+        </article>
+        <article data-pet="horse" class="card-lift card overflow-hidden">
+          <div class="aisle-band aisle-band--teal">Feed &amp; Minerals</div>
+          <div class="p-5"><h3 class="font-heading font-900 text-ink text-lg">Minerals &amp; supplements</h3><p class="text-ink/60 text-sm mt-1">Balanced minerals, supplements &amp; everyday nutrition for the herd.</p></div>
+        </article>
+        <article data-pet="horse" class="card-lift card overflow-hidden">
+          <div class="aisle-band aisle-band--amber">Tack Room</div>
+          <div class="p-5"><h3 class="font-heading font-900 text-ink text-lg">Tack-room essentials</h3><p class="text-ink/60 text-sm mt-1">Grooming, fly control, wound care &amp; the small stuff you always need.</p></div>
+        </article>
+
+        <!-- FARM -->
+        <article data-pet="farm" class="card-lift card overflow-hidden">
+          <div class="aisle-band aisle-band--amber">Cattle Health</div>
+          <div class="p-5"><h3 class="font-heading font-900 text-ink text-lg">Cattle vaccines &amp; implants</h3><p class="text-ink/60 text-sm mt-1">Merck, Zoetis &amp; Boehringer vaccines, implants &amp; VFD feed products.</p></div>
+        </article>
+        <article data-pet="farm" class="card-lift card overflow-hidden">
+          <div class="aisle-band aisle-band--teal">Swine Health</div>
+          <div class="p-5"><h3 class="font-heading font-900 text-ink text-lg">Swine vaccines &amp; feed</h3><p class="text-ink/60 text-sm mt-1">PRRS, Circo &amp; Myco vaccines plus feed &amp; barn supplies.</p></div>
+        </article>
+        <article data-pet="farm" class="card-lift card overflow-hidden">
+          <div class="aisle-band aisle-band--amber">Sheep &amp; Goats</div>
+          <div class="p-5"><h3 class="font-heading font-900 text-ink text-lg">Sheep &amp; goat supplies</h3><p class="text-ink/60 text-sm mt-1">Vaccines, wormers, minerals &amp; general small-ruminant care.</p></div>
+        </article>
+
+      </div>
+
+      <p class="mt-8 text-center text-ink/55">Don't see it? <a href="tel:+15075325000" class="text-teal font-bold hover:underline">Call us</a> — if we don't have it, we'll order it in.</p>
+    </div>
+  </section>
+
+  <!-- ===================== RANCH AISLE FEATURE ===================== -->
+  <section data-ranch class="ranch relative py-20 sm:py-28">
+    <div class="ranch-ground"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl" data-anim="up">
+        <p class="font-heading font-800 text-rust text-sm tracking-[0.25em] uppercase">The ranch aisle</p>
+        <h2 class="mt-2 font-heading display text-4xl sm:text-6xl">Stocked for every<br />head you raise.</h2>
+        <p class="mt-4 text-[#5a3f1d] text-lg max-w-xl">Name-brand vaccines, wormers, minerals, feed, implants &amp; VFD products — with Dr. Kuecker on staff for the calls a feed store can't make.</p>
+        <div data-lasso class="lasso-rope mt-6 max-w-xs"></div>
+      </div>
+      <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6 items-end">
+        <figure data-livestock class="text-center">
+          <div class="relative inline-block"><span class="ground-shadow"></span><img src="img/transparent/horse.png" alt="Horse" class="cutout h-40 sm:h-56 w-auto mx-auto" onerror="this.style.display='none'"/></div>
+          <figcaption class="mt-3 font-heading font-900 text-[#3a2510]">Equine</figcaption>
+        </figure>
+        <figure data-livestock class="text-center">
+          <div class="relative inline-block"><span class="ground-shadow"></span><img src="img/transparent/cow-calf.png" alt="Cow and calf" class="cutout h-40 sm:h-56 w-auto mx-auto" onerror="this.style.display='none'"/></div>
+          <figcaption class="mt-3 font-heading font-900 text-[#3a2510]">Cattle</figcaption>
+        </figure>
+        <figure data-livestock class="text-center">
+          <div class="relative inline-block"><span class="ground-shadow"></span><img src="img/transparent/pig.png" alt="Pig" class="cutout h-32 sm:h-44 w-auto mx-auto" onerror="this.style.display='none'"/></div>
+          <figcaption class="mt-3 font-heading font-900 text-[#3a2510]">Swine</figcaption>
+        </figure>
+        <figure data-livestock class="text-center">
+          <div class="relative inline-block"><span class="ground-shadow"></span><img src="img/transparent/goat.png" alt="Goat" class="cutout h-36 sm:h-52 w-auto mx-auto" onerror="this.style.display='none'"/></div>
+          <figcaption class="mt-3 font-heading font-900 text-[#3a2510]">Sheep &amp; Goats</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LARGE-ANIMAL VET ===================== -->
+  <section id="vet" data-ranch class="ranch relative py-20 sm:py-28 scroll-mt-24">
+    <div class="ranch-ground"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div data-anim="up">
+        <span class="service-kicker bg-white/60 text-rust">Large-Animal Vet</span>
+        <h2 class="mt-3 font-heading display text-4xl sm:text-5xl">Dr. Kuecker<br />is right here.</h2>
+        <p class="mt-4 text-[#5a3f1d] text-lg max-w-xl">On-staff veterinarian <strong>Dr. Scott Kuecker</strong> — a University of Minnesota grad with a large-animal focus — has cared for area herds for decades. Vet care and the supplies to back it up, all in one stop.</p>
+        <div data-lasso class="lasso-rope mt-6 max-w-xs"></div>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="tel:+15075325000" class="btn btn--ink">Call for vet care →</a>
+          <a href="about.html" class="btn btn--ghost">Meet the team</a>
+        </div>
+      </div>
+      <div class="relative" data-anim="up">
+        <figure data-livestock class="text-center">
+          <div class="relative inline-block"><span class="ground-shadow"></span><img src="img/transparent/cow-calf.png" alt="An Angus cow and calf" class="cutout h-52 sm:h-72 w-auto mx-auto" onerror="this.style.display='none'"/></div>
+        </figure>
+        <div data-float="26" class="absolute bottom-0 right-2 w-28 sm:w-40 pointer-events-none">
+          <span class="ground-shadow"></span>
+          <img src="img/transparent/goat.png" alt="" class="cutout w-full h-auto" onerror="this.style.display='none'"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BRANDS WE CARRY (marquee) ===================== -->
+  <section class="py-16 bg-white border-y border-ink/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <p class="text-center font-heading font-800 text-teal text-sm tracking-[0.2em] uppercase" data-anim="up">Brands we carry</p>
+    </div>
+    <div data-carousel class="edge-fade overflow-hidden mt-8">
+      <div data-autoscroll="36" class="marquee-track flex items-center gap-12 px-6 text-ink/35 font-heading font-900 text-2xl whitespace-nowrap">
+        <span>Merck</span><span>Zoetis</span><span>Boehringer</span>
+        <span aria-hidden="true">Merck</span><span aria-hidden="true">Zoetis</span><span aria-hidden="true">Boehringer</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="relative overflow-hidden bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20">
+      <div class="rounded-[2rem] bg-gradient-to-br from-teal via-teal2 to-teal text-cream p-10 sm:p-16 text-center relative overflow-hidden">
+        <div class="relative" data-anim="up">
+          <h2 class="font-heading display text-4xl sm:text-5xl">Come see the<br />whole store.</h2>
+          <p class="mt-4 text-cream/85 text-lg max-w-xl mx-auto">Pop in to browse the aisles in person — pets up front, livestock in back, friendly faces throughout.</p>
+          <div class="mt-8 flex flex-wrap gap-3 justify-center"><a href="about.html" class="btn btn--amber">Get directions →</a><a href="tel:+15075325000" class="btn btn--ink">Call (507) 532-5000</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-ink text-cream/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <div><img src="img/logo.png" alt="Animal Health Center &amp; Pet Resort" class="h-16 w-auto brightness-0 invert" /></div>
+        <p class="mt-4 text-sm">Southwest Minnesota's one-stop shop for pets and livestock — big animals &amp; small. Locally owned in Marshall, MN.</p>
+        <a href="https://www.facebook.com/animalhealthcentermn/" target="_blank" rel="noopener" aria-label="Facebook" class="mt-4 inline-grid place-items-center w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"><svg viewBox="0 0 24 24" class="w-5 h-5 fill-cream"><path d="M13 22v-8h3l.5-3.5H13V8.3c0-1 .3-1.7 1.8-1.7H17V3.4A26 26 0 0 0 14.6 3C12 3 10 4.6 10 7.7v2.8H7V14h3v8Z"/></svg></a>
+      </div>
+      <div><h4 class="font-heading font-800 text-cream">Explore</h4><ul class="mt-3 space-y-2 text-sm"><li><a href="about.html" class="hover:text-amber2 transition-colors">About Us</a></li><li><a href="resort.html" class="hover:text-amber2 transition-colors">Pet Resort</a></li><li><a href="grooming.html" class="hover:text-amber2 transition-colors">Grooming</a></li><li><a href="livestock.html" class="hover:text-amber2 transition-colors">Livestock</a></li><li><a href="small-animal.html" class="hover:text-amber2 transition-colors">Small Animal</a></li></ul></div>
+      <div><h4 class="font-heading font-800 text-cream">Hours</h4><ul class="mt-3 space-y-1.5 text-sm"><li class="flex justify-between gap-4"><span>Mon – Fri</span><span class="text-cream">8:00am – 5:30pm</span></li><li class="flex justify-between gap-4"><span>Saturday</span><span class="text-cream">8:00am – 12:00pm</span></li><li class="flex justify-between gap-4"><span>Sunday</span><span class="text-cream/50">Closed</span></li></ul><span data-hours-badge class="hours-badge is-closed mt-3">Checking hours…</span></div>
+      <div><h4 class="font-heading font-800 text-cream">Visit / Call</h4><p class="mt-3 text-sm">1300 N. Hwy 59<br />Marshall, MN 56258</p><a href="tel:+15075325000" class="mt-2 inline-block font-heading font-800 text-cream text-lg hover:text-amber2 transition-colors">(507) 532-5000</a><a data-book class="mt-4 btn btn--amber !py-2.5 !px-4 !text-sm">Book the Pet Resort →</a></div>
+    </div>
+    <div class="border-t border-white/10"><div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-wrap items-center justify-between gap-2 text-xs text-cream/50"><p>© <span data-year>2026</span> Animal Health Center &amp; Pet Resort. All rights reserved.</p><p>For animals big &amp; small.</p></div></div>
+  </footer>
+
+  <!-- ===================== STICKY BOOK BAR ===================== -->
+  <div data-booknow-bar class="booknow-bar">
+    <div class="bg-ink text-cream md:rounded-2xl md:shadow-2xl">
+      <div class="max-w-7xl md:max-w-none mx-auto px-4 py-3 flex items-center justify-between gap-3 md:gap-6">
+        <span class="hidden sm:block font-heading font-800 text-sm">Ready when you are.</span>
+        <div class="flex items-center gap-2.5 ml-auto"><a data-book class="btn btn--amber !py-2.5 !px-4 !text-sm">Book a Stay</a><a href="tel:+15075325000" class="btn !py-2.5 !px-4 !text-sm bg-white/10 text-cream">Call Us</a></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/widgets.js" defer></script>
+  <script src="js/animations.js" defer></script>
+</body>
+</html>

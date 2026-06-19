@@ -80,6 +80,19 @@ h1,h2,h3,h4,h5,.font-heading {
     linear-gradient(180deg, #FFFDF7 0%, var(--cream) 60%, var(--cream-2) 100%);
 }
 
+/* hero photo slideshow */
+.hero-slideshow { min-height: 84vh; }
+.hero-slideshow__slides { z-index:0; }
+.hero-slideshow__slide {
+  position:absolute; inset:0; background-size:cover; background-position:center;
+  opacity:0; transition:opacity 2s ease-in-out;
+}
+.hero-slideshow__slide.is-active { opacity:1; }
+.hero-slideshow__scrim {
+  z-index:1;
+  background: linear-gradient(180deg, rgba(20,15,8,.55) 0%, rgba(20,15,8,.45) 45%, rgba(20,15,8,.65) 100%);
+}
+
 /* ==========================================================================
    CUTOUTS — the stars. Clean-edge ones float anywhere; haloed ones live in frames.
    ========================================================================== */
@@ -143,6 +156,8 @@ h1,h2,h3,h4,h5,.font-heading {
 .btn--ink:hover { transform:translateY(-3px); box-shadow:var(--shadow); }
 .btn--ghost { background:var(--white); color:var(--ink); box-shadow:inset 0 0 0 2px rgba(60,40,16,.14), var(--shadow-sm); }
 .btn--ghost:hover { transform:translateY(-3px); box-shadow:inset 0 0 0 2px rgba(60,40,16,.22), var(--shadow); }
+.btn--ghost-light { background:transparent; color:#fff; box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.55); }
+.btn--ghost-light:hover { transform:translateY(-3px); background:rgba(255,255,255,.12); box-shadow:inset 0 0 0 1.5px #fff; }
 
 /* ==========================================================================
    CARDS
@@ -221,14 +236,27 @@ h1,h2,h3,h4,h5,.font-heading {
 .booknow-bar.is-visible { transform:translateY(0); }
 @media (min-width:768px){ .booknow-bar{ left:50%; right:auto; bottom:1.5rem; transform:translate(-50%,180%);} .booknow-bar.is-visible{ transform:translate(-50%,0);} }
 
-/* mobile drawer */
-.nav-drawer { transition:transform .4s var(--ease-out), opacity .4s var(--ease-out); transform:translateX(100%); opacity:0; }
-.nav-drawer.is-open { transform:translateX(0); opacity:1; }
-body.menu-open { overflow:hidden; }
+/* floating pill header */
+[data-site-header] { transition: top .3s var(--ease-out); }
+[data-site-header] > div { transition: background .3s var(--ease-out), box-shadow .3s var(--ease-out); }
+[data-site-header].is-stuck { top: 10px; }
+[data-site-header].is-stuck > div { background: rgba(251,246,236,.3); box-shadow: 0 12px 36px -16px rgba(60,40,16,.45); }
 
-/* sticky header */
-[data-site-header]{ transition: background .3s var(--ease-out), box-shadow .3s var(--ease-out); }
-[data-site-header].is-stuck{ background:rgba(251,246,236,.92); box-shadow:0 8px 30px -18px rgba(60,40,16,.4); }
+/* active nav link inside the pill: teal background pill instead of the amber underline */
+[data-site-header] [data-nav].is-active,
+.nav-dropdown [data-nav].is-active {
+  color: var(--teal);
+  background: rgba(27,107,107,.08);
+}
+[data-site-header] [data-nav].is-active::after,
+.nav-dropdown [data-nav].is-active::after {
+  display: none;
+}
+
+/* mobile dropdown panel */
+.nav-dropdown { transition:transform .25s var(--ease-out), opacity .25s var(--ease-out); transform:translateY(-8px); opacity:0; pointer-events:none; }
+.nav-dropdown.is-open { transform:translateY(0); opacity:1; pointer-events:auto; }
+body.menu-open { overflow:hidden; }
 
 /* ==========================================================================
    INNER-PAGE HELPERS (services / shop / promotions / about)

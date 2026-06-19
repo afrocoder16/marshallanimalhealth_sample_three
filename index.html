@@ -43,177 +43,171 @@
   </div>
 
   <!-- ===== NAV ===== -->
-  <header data-site-header class="sticky top-0 z-40 bg-cream/70 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
-      <a href="index.html" class="flex items-center" aria-label="Animal Health Center home"><img src="img/logo.png" alt="Animal Health Center &amp; Pet Resort" class="h-16 w-auto" /></a>
-      <nav class="hidden lg:flex items-center gap-7 text-[15px] font-bold text-ink/70" aria-label="Primary">
-        <a data-nav="services" href="services.html" class="hover:text-teal transition-colors">Services</a>
-        <a data-nav="resort" href="resort.html" class="hover:text-teal transition-colors">Pet Resort</a>
-        <a data-nav="shop" href="shop.html" class="hover:text-teal transition-colors">Shop by Animal</a>
-        <a data-nav="promotions" href="promotions.html" class="hover:text-teal transition-colors">Promotions</a>
-        <a data-nav="about" href="about.html" class="hover:text-teal transition-colors">About</a>
+  <header data-site-header class="fixed left-1/2 -translate-x-1/2 z-40 w-[min(calc(100%-24px),1180px)] top-[50px]">
+    <div class="relative flex items-center justify-between gap-4 min-h-[64px] px-3 py-2 rounded-3xl bg-cream/30 backdrop-blur-md shadow-[0_20px_60px_-24px_rgba(60,40,16,.45)] ring-1 ring-ink/10">
+      <a href="index.html" class="flex items-center pl-1" aria-label="Animal Health Center home"><img src="img/logo.png" alt="Animal Health Center &amp; Pet Resort" class="h-12 w-auto" /></a>
+      <nav class="hidden lg:flex items-center gap-1 text-[15px] font-bold text-ink/70" aria-label="Primary">
+        <a data-nav="about" href="about.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">About Us</a>
+        <a data-nav="resort" href="resort.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">Pet Resort</a>
+        <a data-nav="shop" href="shop.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">Shop</a>
+        <a data-nav="livestock" href="livestock.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">Livestock</a>
+        <a data-nav="small-animal" href="small-animal.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">Small Animal</a>
+        <a data-nav="grooming" href="grooming.html" class="px-3.5 py-2.5 rounded-2xl hover:text-ink hover:bg-ink/[.06] transition-colors">Grooming</a>
       </nav>
       <div class="flex items-center gap-2">
         <a data-book class="hidden sm:inline-flex btn btn--amber !py-2.5 !px-4 !text-sm">Book a Stay</a>
-        <button data-menu-toggle class="lg:hidden grid place-items-center w-11 h-11 rounded-xl bg-white shadow-sm text-ink" aria-label="Open menu" aria-expanded="false">
+        <button data-menu-toggle class="lg:hidden grid place-items-center w-11 h-11 rounded-2xl bg-white shadow-sm text-ink" aria-label="Open menu" aria-controls="navDropdown" aria-expanded="false">
           <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
         </button>
       </div>
+
+      <!-- Mobile dropdown -->
+      <nav data-menu-drawer id="navDropdown" class="nav-dropdown lg:hidden absolute top-[calc(100%+10px)] right-0 w-[min(320px,calc(100vw-24px))] grid gap-1 p-3 rounded-3xl bg-cream/97 backdrop-blur-md shadow-[0_20px_60px_-20px_rgba(60,40,16,.5)] ring-1 ring-ink/10 text-base font-heading font-800 text-ink/80" aria-label="Mobile">
+        <a data-nav="about" href="about.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">About Us</a>
+        <a data-nav="resort" href="resort.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">Pet Resort</a>
+        <a data-nav="shop" href="shop.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">Shop</a>
+        <a data-nav="livestock" href="livestock.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">Livestock</a>
+        <a data-nav="small-animal" href="small-animal.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">Small Animal</a>
+        <a data-nav="grooming" href="grooming.html" class="px-3.5 py-3 rounded-2xl hover:bg-ink/[.06] hover:text-ink transition-colors">Grooming</a>
+        <a data-book class="btn btn--amber justify-center mt-2">Book the Pet Resort →</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Mobile drawer -->
-  <div data-menu-drawer class="nav-drawer lg:hidden fixed inset-0 z-50 bg-cream text-ink p-6 flex flex-col">
-    <div class="flex items-center justify-between">
-      <span class="font-heading font-900 text-lg">Menu</span>
-      <button data-menu-close class="grid place-items-center w-11 h-11 rounded-xl bg-white shadow-sm" aria-label="Close menu">
-        <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"/></svg>
-      </button>
-    </div>
-    <nav class="mt-8 flex flex-col gap-1 text-2xl font-heading font-800" aria-label="Mobile">
-      <a href="services.html" class="py-3 border-b border-ink/10">Services</a>
-      <a href="resort.html" class="py-3 border-b border-ink/10">Pet Resort</a>
-      <a href="shop.html" class="py-3 border-b border-ink/10">Shop by Animal</a>
-      <a href="promotions.html" class="py-3 border-b border-ink/10">Promotions</a>
-      <a href="about.html" class="py-3 border-b border-ink/10">About &amp; Contact</a>
-    </nav>
-    <a data-book class="mt-auto btn btn--amber justify-center">Book the Pet Resort →</a>
-  </div>
-
   <main>
 
-  <!-- ===================== HERO — bright, dog + horse duo ===================== -->
-  <section data-hero data-booknow-after class="sunrise relative overflow-hidden">
-    <!-- soft scenery -->
-    <div data-blob class="blob blob--teal w-[30rem] h-[30rem] -left-32 top-10"></div>
-    <div data-blob class="blob blob--peach w-[26rem] h-[26rem] right-[-6rem] top-24"></div>
-    <div class="soft-glow bg-amber2/30 w-[24rem] h-[24rem] left-1/2 -bottom-24"></div>
+  <!-- ===================== HERO — photo slideshow ===================== -->
+  <section data-hero data-booknow-after class="hero-slideshow relative overflow-hidden">
+    <div class="hero-slideshow__slides absolute inset-0">
+      <div class="hero-slideshow__slide is-active" style="background-image:url('../images/hero2.png')"></div>
+    </div>
+    <div class="hero-slideshow__scrim absolute inset-0"></div>
 
-    <!-- full-width layout: rancher | copy  (animals are absolute, right side) -->
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 flex items-center min-h-[84vh]">
-
-      <!-- rancher — absolute, bottom-left, own space, never overlaps copy -->
-      <div class="hidden lg:block absolute left-0 bottom-0 w-[220px] z-0 pointer-events-none select-none" aria-hidden="true">
-        <img src="img/transparent/rancher with his dog showing a thumbs up.png" alt=""
-             class="w-full h-auto object-contain"
-             style="filter:drop-shadow(0 12px 28px rgba(32,24,15,.25))" />
-      </div>
-
-      <!-- copy — centred vertically, left margin clears the rancher on desktop -->
-      <div class="relative z-10 w-full max-w-xl lg:ml-[240px] py-16">
-        <p data-hero-line class="inline-flex items-center gap-2 text-teal font-bold text-sm bg-white shadow-sm rounded-full px-4 py-2">
-          <span class="w-2 h-2 rounded-full bg-amber2"></span> One roof · pets &amp; livestock · Marshall, MN
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 flex items-center min-h-[84vh]">
+      <div class="w-full max-w-xl pt-[150px] pb-16">
+        <p data-hero-line class="inline-flex items-center gap-2 text-amber2 font-bold text-sm bg-white/15 ring-1 ring-white/25 backdrop-blur-sm rounded-full px-4 py-2">
+          <span class="w-2 h-2 rounded-full bg-amber2"></span> For animals big &amp; small · Serving SW Minnesota since 2000
         </p>
-        <h1 class="mt-6 font-heading display text-ink text-[3.6rem] leading-[.92] sm:text-7xl xl:text-[5.4rem]">
-          <span data-hero-line class="block">For animals</span>
-          <span data-hero-line class="block">big <span class="text-amber">&amp;</span> <span class="text-teal">small.</span></span>
+        <h1 class="mt-6 font-heading display text-white text-[3.6rem] leading-[.92] sm:text-7xl xl:text-[5.4rem]">
+          <span data-hero-line class="block">One stop shop.</span>
+          <span data-hero-line class="block italic text-amber2">Big animals &amp; small.</span>
         </h1>
-        <p data-hero-line class="mt-6 text-ink/65 text-lg max-w-md">
-          Southwest Minnesota's one-stop shop — a full pet &amp; livestock store, a pet resort
-          for boarding &amp; doggy daycare, on-staff grooming, and large-animal vet care.
+        <p data-hero-line class="mt-6 text-white/80 text-lg max-w-md">
+          Southwest Minnesota's one stop shop for all your animal needs a full retail store
+          for pets and livestock, a pet resort for boarding &amp; daycare, and on-staff grooming,
+          all in Marshall.
         </p>
         <div data-hero-line class="mt-8 flex flex-wrap gap-3">
-          <a data-book class="btn btn--amber">Book the Pet Resort →</a>
-          <a href="shop.html" class="btn btn--ghost">Shop by Animal</a>
+          <a href="shop.html" class="btn btn--amber">Explore the Store →</a>
+          <a data-book class="btn btn--ghost-light">Book the Pet Resort</a>
         </div>
-        <div data-hero-line class="mt-9 flex items-center gap-5 flex-wrap">
-          <span class="flex items-center gap-2 text-ink/60 text-sm"><span class="text-amber text-base">★★★★★</span> Marshall-loved</span>
-          <span class="inline-flex items-center gap-3 bg-white rounded-2xl shadow-md px-4 py-2.5 border border-ink/8">
-            <span class="font-heading font-900 text-ink text-3xl leading-none" data-countup data-to="25" data-suffix="+">25+</span>
-            <span class="text-ink/55 text-sm leading-tight">years<br />serving you</span>
-          </span>
+        <div data-hero-line class="mt-9 flex items-center gap-2 text-white/75 text-sm">
+          <span class="text-amber2 text-base">★★★★★</span> Trusted by Marshall-area pet owners &amp; producers
         </div>
-      </div>
-
-      <!-- animals — absolute right, fills right portion of viewport -->
-      <div class="hidden lg:block absolute right-0 bottom-0 w-[42%] h-[80vh] pointer-events-none" aria-hidden="false">
-        <!-- horse (back-left of animal group) -->
-        <div data-hero-star data-rate="5" class="absolute left-[0%] bottom-0 w-[50%]">
-          <span class="ground-shadow"></span>
-          <img src="img/transparent/horse.png" alt="A horse" class="cutout w-full h-auto" onerror="this.parentElement.style.display='none'" />
-        </div>
-        <!-- dog (center, bobs) -->
-        <div data-hero-star data-rate="11" data-bob class="absolute left-[30%] bottom-0 w-[46%] z-[3]">
-          <span class="ground-shadow"></span>
-          <img src="img/transparent/dog-sitting.png" alt="A golden retriever" class="cutout w-full h-auto" onerror="this.parentElement.style.display='none'" />
-        </div>
-        <!-- cat — far right corner, proper size -->
-        <div data-hero-star data-rate="14" data-bob class="absolute right-[0%] bottom-0 w-[28%] z-[5]">
-          <span class="ground-shadow"></span>
-          <img src="img/transparent/hero-cat.png" alt="A cat" class="cutout w-full h-auto" onerror="this.parentElement.style.display='none'" />
-        </div>
-      </div>
-
-      <!-- mobile: animals stack below copy -->
-      <div class="lg:hidden absolute bottom-0 right-0 w-[55%] h-[40vh]">
-        <div class="absolute left-0 bottom-0 w-[55%]"><span class="ground-shadow"></span><img src="img/transparent/horse.png" alt="" class="cutout w-full h-auto" /></div>
-        <div class="absolute right-0 bottom-0 w-[50%] z-[3]"><span class="ground-shadow"></span><img src="img/transparent/dog-sitting.png" alt="" class="cutout w-full h-auto" /></div>
       </div>
     </div>
 
     <!-- marquee strip -->
-    <div data-carousel class="relative z-10 border-t border-ink/10 bg-white/50 backdrop-blur-sm">
+    <div data-carousel class="relative z-10 border-t border-white/15 bg-black/20 backdrop-blur-sm">
       <div class="edge-fade overflow-hidden py-3.5">
-        <div data-autoscroll="32" class="marquee-track flex items-center gap-9 px-6 text-ink/45 font-heading font-800 text-lg whitespace-nowrap">
-          <span>Dogs</span><span class="text-amber/50">·</span><span>Cats</span><span class="text-amber/50">·</span><span>Equine</span><span class="text-amber/50">·</span><span>Cattle</span><span class="text-amber/50">·</span><span>Swine</span><span class="text-amber/50">·</span><span>Goats</span><span class="text-amber/50">·</span><span>Sheep</span><span class="text-amber">· All under one roof ·</span>
-          <span aria-hidden="true">Dogs</span><span aria-hidden="true" class="text-amber/50">·</span><span aria-hidden="true">Cats</span><span aria-hidden="true" class="text-amber/50">·</span><span aria-hidden="true">Equine</span><span aria-hidden="true" class="text-amber/50">·</span><span aria-hidden="true">Cattle</span><span aria-hidden="true" class="text-amber/50">·</span><span aria-hidden="true">Swine</span><span aria-hidden="true" class="text-amber/50">·</span><span aria-hidden="true">Goats</span><span aria-hidden="true" class="text-amber/50">·</span><span aria-hidden="true">Sheep</span><span aria-hidden="true" class="text-amber">· All under one roof ·</span>
+        <div data-autoscroll="32" class="marquee-track flex items-center gap-9 px-6 text-white/50 font-heading font-800 text-lg whitespace-nowrap">
+          <span>Dogs</span><span class="text-amber2/60">·</span><span>Cats</span><span class="text-amber2/60">·</span><span>Equine</span><span class="text-amber2/60">·</span><span>Cattle</span><span class="text-amber2/60">·</span><span>Swine</span><span class="text-amber2/60">·</span><span>Goats</span><span class="text-amber2/60">·</span><span>Sheep</span><span class="text-amber2">· All under one roof ·</span>
+          <span aria-hidden="true">Dogs</span><span aria-hidden="true" class="text-amber2/60">·</span><span aria-hidden="true">Cats</span><span aria-hidden="true" class="text-amber2/60">·</span><span aria-hidden="true">Equine</span><span aria-hidden="true" class="text-amber2/60">·</span><span aria-hidden="true">Cattle</span><span aria-hidden="true" class="text-amber2/60">·</span><span aria-hidden="true">Swine</span><span aria-hidden="true" class="text-amber2/60">·</span><span aria-hidden="true">Goats</span><span aria-hidden="true" class="text-amber2/60">·</span><span aria-hidden="true">Sheep</span><span aria-hidden="true" class="text-amber2">· All under one roof ·</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== PET PROFILE BUILDER ===================== -->
-  <section class="py-20 sm:py-28 relative" data-pet-scope>
+  <!-- ===================== ABOUT — who we are ===================== -->
+  <section class="py-20 sm:py-28 relative overflow-hidden">
+    <div class="soft-glow bg-amber2/15 w-[26rem] h-[26rem] -right-20 top-10"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <div class="relative max-w-[480px] mx-auto lg:mx-0" data-anim="up">
+        <div class="aspect-[4/5] rounded-3xl shadow-[0_20px_60px_-24px_rgba(60,40,16,.45)] bg-cover bg-center" style="background-image:linear-gradient(180deg, rgba(32,24,15,.05), rgba(32,24,15,.25)), url('../images/dog_cat.png')"></div>
+        <div class="absolute -right-[6%] -bottom-[10%] w-[48%] aspect-square rounded-3xl border-[6px] border-cream shadow-[0_20px_60px_-24px_rgba(60,40,16,.45)] bg-cover bg-center" style="background-image:url('../images/Theresa.png')"></div>
+        <div class="absolute -left-[6%] top-[8%] grid gap-0.5 px-5 py-4 rounded-2xl bg-amber2 text-ink shadow-[0_20px_60px_-24px_rgba(60,40,16,.45)] max-w-[200px]">
+          <span class="font-heading font-900 text-2xl leading-none">100%</span>
+          <span class="font-bold text-[13px] leading-tight">Locally owned &amp; family run</span>
+        </div>
+      </div>
+
+      <div data-anim="up">
+        <p class="font-heading font-800 text-teal text-sm tracking-[0.2em] uppercase">Who we are</p>
+        <h2 class="mt-2 font-heading display text-ink text-4xl sm:text-5xl">One stop for every<br />animal you care for.</h2>
+        <p class="mt-4 text-ink/60 text-lg">
+          Animal Health Center has been Marshall's go-to for animals big and small since 2000.
+          From pet food and grooming to livestock vaccines and supplies, we're the friendly,
+          family-run shop that keeps Southwest Minnesota's animals healthy and happy.
+        </p>
+        <ul class="mt-6 grid gap-3">
+          <li class="feature-li">Full retail store for pets &amp; livestock alike</li>
+          <li class="feature-li">Pet Resort dog &amp; cat boarding and doggy daycare</li>
+          <li class="feature-li">On-staff grooming: bathing, brushing &amp; nails</li>
+          <li class="feature-li">We work closely with the vets at Marshall Animal Clinic</li>
+        </ul>
+        <div class="mt-8 pt-6 border-t border-ink/10 flex items-center justify-between gap-4 flex-wrap">
+          <div>
+            <span class="block font-heading font-800 text-ink text-lg">Theresa Welu</span>
+            <span class="block text-ink/55 text-sm">Owner</span>
+          </div>
+          <a href="about.html" class="btn btn--ink">Meet the team →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHO ARE YOU CARING FOR ===================== -->
+  <section class="py-20 sm:py-28 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="max-w-2xl" data-anim="up">
-        <p class="font-heading font-800 text-teal text-sm tracking-[0.2em] uppercase">Shop by animal</p>
+        <p class="font-heading font-800 text-teal text-sm tracking-[0.2em] uppercase">Find your way</p>
         <h2 class="mt-2 font-heading display text-ink text-4xl sm:text-5xl">Who are you<br />caring for today?</h2>
-        <p class="mt-4 text-ink/60 text-lg">Pick an animal — we'll show what we stock and the services for them. Pets and livestock, same roof.</p>
+        <p class="mt-4 text-ink/60 text-lg">Pick what brought you in — we'll take you straight there.</p>
       </div>
 
-      <div data-widget="profile" data-default="dog" class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-5">
-        <!-- Dogs tile -->
-        <button data-pet-tile="dog" class="pet-tile group text-center card overflow-hidden relative">
-          <div class="relative bg-gradient-to-b from-sand/60 to-cream h-44 overflow-hidden flex items-end justify-center">
-            <img src="img/transparent/different dogs.png" alt="Various dog breeds" class="w-full h-full object-contain object-bottom scale-110 group-hover:scale-[1.15] transition-transform duration-500" onerror="this.parentElement.style.background='#EFE3CE'"/>
-          </div>
-          <span class="flex items-center justify-center px-5 py-4 bg-cream border-t border-ink/8"><span class="font-heading font-900 text-ink text-lg">Dogs</span></span>
-        </button>
-        <!-- Cats tile -->
-        <button data-pet-tile="cat" class="pet-tile group text-center card overflow-hidden relative">
-          <div class="relative bg-gradient-to-b from-peach/50 to-cream h-44 overflow-hidden flex items-end justify-center">
-            <img src="img/transparent/different cats.png" alt="Various cat breeds" class="w-full h-full object-contain object-bottom scale-110 group-hover:scale-[1.15] transition-transform duration-500" onerror="this.parentElement.style.background='#F6D9A8'"/>
-          </div>
-          <span class="flex items-center justify-center px-5 py-4 bg-cream border-t border-ink/8"><span class="font-heading font-900 text-ink text-lg">Cats</span></span>
-        </button>
-        <!-- Equine tile -->
-        <button data-pet-tile="horse" class="pet-tile group text-center card overflow-hidden relative">
+      <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-5" data-anim="cards">
+        <!-- Pet Resort -->
+        <a href="resort.html" class="pet-tile group text-center card overflow-hidden relative block">
           <div class="relative bg-gradient-to-b from-teal/15 to-cream h-44 overflow-hidden flex items-end justify-center">
-            <img src="img/transparent/different horses.png" alt="Various horse breeds" class="w-full h-full object-contain object-bottom scale-110 group-hover:scale-[1.15] transition-transform duration-500" onerror="this.parentElement.style.background='#EFE3CE'"/>
+            <img src="img/transparent/dog-sitting.png" alt="Pet Resort — boarding &amp; daycare" class="w-full h-full object-contain object-bottom scale-110 group-hover:scale-[1.15] transition-transform duration-500" onerror="this.parentElement.style.background='#1B6B6B1A'"/>
           </div>
-          <span class="flex items-center justify-center px-5 py-4 bg-cream border-t border-ink/8"><span class="font-heading font-900 text-ink text-lg">Equine</span></span>
-        </button>
-        <!-- Farm tile -->
-        <button data-pet-tile="farm" class="pet-tile group text-center card overflow-hidden relative">
+          <span class="block px-5 py-4 bg-cream border-t border-ink/8 text-left">
+            <span class="block font-heading font-900 text-ink text-lg">Pet Resort</span>
+            <span class="block text-ink/55 text-sm mt-0.5">Boarding &amp; daycare</span>
+          </span>
+        </a>
+        <!-- Small Animals -->
+        <a href="small-animal.html" class="pet-tile group text-center card overflow-hidden relative block">
+          <div class="relative bg-gradient-to-b from-sand/60 to-cream h-44 overflow-hidden flex items-end justify-center">
+            <img src="img/transparent/different dogs.png" alt="Pets &amp; small animals" class="w-full h-full object-contain object-bottom scale-110 group-hover:scale-[1.15] transition-transform duration-500" onerror="this.parentElement.style.background='#EFE3CE'"/>
+          </div>
+          <span class="block px-5 py-4 bg-cream border-t border-ink/8 text-left">
+            <span class="block font-heading font-900 text-ink text-lg">Pets &amp; Small Animals</span>
+            <span class="block text-ink/55 text-sm mt-0.5">Dogs, cats, rabbits &amp; chickens</span>
+          </span>
+        </a>
+        <!-- Livestock -->
+        <a href="livestock.html" class="pet-tile group text-center card overflow-hidden relative block">
           <div class="relative bg-gradient-to-b from-amber/20 to-cream h-44 overflow-hidden flex items-end justify-center">
-            <img src="img/transparent/farm animals.png" alt="Farm animals" class="w-full h-full object-contain object-bottom scale-110 group-hover:scale-[1.15] transition-transform duration-500" onerror="this.parentElement.style.background='#EFE3CE'"/>
+            <img src="img/transparent/farm animals.png" alt="Livestock" class="w-full h-full object-contain object-bottom scale-110 group-hover:scale-[1.15] transition-transform duration-500" onerror="this.parentElement.style.background='#EFE3CE'"/>
           </div>
-          <span class="flex items-center justify-center px-5 py-4 bg-cream border-t border-ink/8"><span class="font-heading font-900 text-ink text-lg">Farm</span></span>
-        </button>
+          <span class="block px-5 py-4 bg-cream border-t border-ink/8 text-left">
+            <span class="block font-heading font-900 text-ink text-lg">Livestock</span>
+            <span class="block text-ink/55 text-sm mt-0.5">Cattle, swine, horses &amp; sheep</span>
+          </span>
+        </a>
+        <!-- Grooming -->
+        <a href="grooming.html" class="pet-tile group text-center card overflow-hidden relative block">
+          <div class="relative bg-gradient-to-b from-peach/50 to-cream h-44 overflow-hidden flex items-end justify-center">
+            <img src="img/transparent/dog-groomed.png" alt="Grooming — bath, brush &amp; a bow" class="w-full h-full object-contain object-bottom scale-110 group-hover:scale-[1.15] transition-transform duration-500" onerror="this.parentElement.style.background='#F6D9A8'"/>
+          </div>
+          <span class="block px-5 py-4 bg-cream border-t border-ink/8 text-left">
+            <span class="block font-heading font-900 text-ink text-lg">Grooming</span>
+            <span class="block text-ink/55 text-sm mt-0.5">Bath, brush &amp; a bow</span>
+          </span>
+        </a>
       </div>
-
-      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <article data-pet="dog" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Premium dog food</h3><p class="text-ink/60 text-sm mt-1">Fromm, NutriSource, Diamond, Royal Canin, Purina Pro Plan.</p></article>
-        <article data-pet="dog" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Daycare &amp; boarding</h3><p class="text-ink/60 text-sm mt-1">Two play rooms split by size, plus boarding suites.</p></article>
-        <article data-pet="dog" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Grooming</h3><p class="text-ink/60 text-sm mt-1">Bathing, brushing &amp; nails by our on-staff groomers.</p></article>
-        <article data-pet="cat" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Kitty Korral boarding</h3><p class="text-ink/60 text-sm mt-1">Quiet cat suites — $20/day, $17 each additional cat.</p></article>
-        <article data-pet="cat" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Cat food &amp; litter</h3><p class="text-ink/60 text-sm mt-1">Royal Canin, Fromm, NutriSource, treats &amp; supplies.</p></article>
-        <article data-pet="horse" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Equine vaccines &amp; wormers</h3><p class="text-ink/60 text-sm mt-1">Plus minerals and everyday tack-room essentials.</p></article>
-        <article data-pet="farm" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Cattle &amp; swine health</h3><p class="text-ink/60 text-sm mt-1">Merck, Zoetis, Boehringer vaccines, implants, VFD feed.</p></article>
-        <article data-pet="farm" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Sheep &amp; goat supplies</h3><p class="text-ink/60 text-sm mt-1">Vaccines, wormers, minerals &amp; general livestock care.</p></article>
-        <article data-pet="farm" class="card-lift card p-5"><h3 class="font-heading font-800 text-ink">Large-animal vet</h3><p class="text-ink/60 text-sm mt-1">On-staff veterinarian Dr. Scott Kuecker.</p></article>
-      </div>
-      <div class="mt-8" data-anim="up"><a href="shop.html" class="inline-flex items-center gap-2 font-heading font-800 text-teal hover:gap-3 transition-all">Open the full Shop by Animal →</a></div>
     </div>
   </section>
 
@@ -418,7 +412,7 @@
         <p class="mt-4 text-sm">Southwest Minnesota's one-stop shop for pets and livestock — big animals &amp; small. Locally owned in Marshall, MN.</p>
         <a href="https://www.facebook.com/animalhealthcentermn/" target="_blank" rel="noopener" aria-label="Facebook" class="mt-4 inline-grid place-items-center w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"><svg viewBox="0 0 24 24" class="w-5 h-5 fill-cream"><path d="M13 22v-8h3l.5-3.5H13V8.3c0-1 .3-1.7 1.8-1.7H17V3.4A26 26 0 0 0 14.6 3C12 3 10 4.6 10 7.7v2.8H7V14h3v8Z"/></svg></a>
       </div>
-      <div><h4 class="font-heading font-800 text-cream">Explore</h4><ul class="mt-3 space-y-2 text-sm"><li><a href="services.html" class="hover:text-amber2 transition-colors">Our Services</a></li><li><a href="resort.html" class="hover:text-amber2 transition-colors">Pet Resort</a></li><li><a href="shop.html" class="hover:text-amber2 transition-colors">Shop by Animal</a></li><li><a href="promotions.html" class="hover:text-amber2 transition-colors">Promotions &amp; Rewards</a></li><li><a href="about.html" class="hover:text-amber2 transition-colors">About &amp; Contact</a></li></ul></div>
+      <div><h4 class="font-heading font-800 text-cream">Explore</h4><ul class="mt-3 space-y-2 text-sm"><li><a href="about.html" class="hover:text-amber2 transition-colors">About Us</a></li><li><a href="resort.html" class="hover:text-amber2 transition-colors">Pet Resort</a></li><li><a href="grooming.html" class="hover:text-amber2 transition-colors">Grooming</a></li><li><a href="livestock.html" class="hover:text-amber2 transition-colors">Livestock</a></li><li><a href="small-animal.html" class="hover:text-amber2 transition-colors">Small Animal</a></li></ul></div>
       <div><h4 class="font-heading font-800 text-cream">Hours</h4><ul class="mt-3 space-y-1.5 text-sm"><li class="flex justify-between gap-4"><span>Mon – Fri</span><span class="text-cream">8:00am – 5:30pm</span></li><li class="flex justify-between gap-4"><span>Saturday</span><span class="text-cream">8:00am – 12:00pm</span></li><li class="flex justify-between gap-4"><span>Sunday</span><span class="text-cream/50">Closed</span></li></ul><span data-hours-badge class="hours-badge is-closed mt-3">Checking hours…</span></div>
       <div><h4 class="font-heading font-800 text-cream">Visit / Call</h4><p class="mt-3 text-sm">1300 N. Hwy 59<br />Marshall, MN 56258</p><a href="tel:+15075325000" class="mt-2 inline-block font-heading font-800 text-cream text-lg hover:text-amber2 transition-colors">(507) 532-5000</a><a data-book class="mt-4 btn btn--amber !py-2.5 !px-4 !text-sm">Book the Pet Resort →</a></div>
     </div>
